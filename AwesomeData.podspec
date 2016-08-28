@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 Fetch data from URLs, parse JSON and save to Coredata easily.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/AwesomeData'
+  s.homepage         = 'https://github.com/eharrison/AwesomeData'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Evandro Hoffmann' => 'evandro@itsdayoff.com' }
