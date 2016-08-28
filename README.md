@@ -56,7 +56,7 @@ AwesomeData.saveContext()
 Fetch data from a URL with standard properties.
 
 ```swift
-AwesomeFetcher.fetchData(“YOUR URL STRING”) { (data) in
+AwesomeFetcher.fetchData("YOUR URL STRING") { (data) in
     //process data
 }
 ```
@@ -66,7 +66,7 @@ AwesomeFetcher.fetchData(“YOUR URL STRING”) { (data) in
 Fetch data from a URL with standard properties, but choosing the method type.
 
 ```swift
-AwesomeFetcher.fetchData(“YOUR URL STRING”,
+AwesomeFetcher.fetchData("YOUR URL STRING",
 method: .GET/.POST/.PUT/.DELETE) { (data) in
     //process data
 }
@@ -77,9 +77,9 @@ method: .GET/.POST/.PUT/.DELETE) { (data) in
 Fetch data from a URL with authorization code.
 
 ```swift
-AwesomeFetcher.fetchData(“YOUR URL STRING”,
+AwesomeFetcher.fetchData("YOUR URL STRING",
 method: .GET/.POST/.PUT/.DELETE,
-authorization: “AUTHORIZATION CODE”) { (data) in
+authorization: "AUTHORIZATION CODE") { (data) in
     //process data
 }
 ```
@@ -89,10 +89,10 @@ authorization: “AUTHORIZATION CODE”) { (data) in
 Fetch data from URL with JSON Body
 
 ```swift
-AwesomeFetcher.fetchData(**“YOUR URL STRING”**,
+AwesomeFetcher.fetchData("YOUR URL STRING",
 method: .GET/.POST/.PUT/.DELETE,
 jsonBody: [String : AnyObject]?,
-authorization: “AUTHORIZATION CODE”) { (data) in
+authorization: "AUTHORIZATION CODE") { (data) in
     //process data
 }
 ```
@@ -102,7 +102,7 @@ authorization: “AUTHORIZATION CODE”) { (data) in
 Fetch data from URL with any combination of properties.
 
 ```swift
-AwesomeFetcher.fetchData(**“YOUR URL STRING”**,
+AwesomeFetcher.fetchData("YOUR URL STRING",
 method: .GET/.POST/.PUT/.DELETE,
 bodyData: NSData?,
 headerValues: [[String]]?,
