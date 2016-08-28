@@ -22,8 +22,142 @@ pod "AwesomeData"
 
 ## Author
 
-Evandro Hoffmann, ehh85@yahoo.com.br
+Evandro Hoffmann, evandro@itsdayoff.com
 
 ## License
 
 AwesomeData is available under the MIT license. See the LICENSE file for more info.
+
+## Removing Coredata code from AppDelegate
+Coredata code should never belong to AppDelegate file, so with the AwesomeData, you can have it from an external source.
+
+## How to Use:
+
+In AppDelegate:
+- Delete the coredata code (everything below **func applicationWillTerminate(application: UIApplication)**)
+- Add to **didFinishLaunchingWithOptions**
+```
+AwesomeData.setDatabase("NAME OF YOUR DATABASE FILE WITHOUT EXTENSION")
+//AwesomeData.showLogs = true
+```
+- Replace / Add to **applicationWillTerminate**
+```
+AwesomeData.saveContext()
+```
+
+## Fetching data from URL:
+
+### Simple Fetch:
+
+Fetch data from a URL with standard properties.
+
+```
+AwesomeFetcher.fetchData(**“YOUR URL STRING”**) { (data) in
+*process data*
+}
+```
+
+### Fetch with Method Type:
+
+Fetch data from a URL with standard properties, but choosing the method type.
+
+```
+AwesomeFetcher.fetchData(**“YOUR URL STRING”**,
+method: **.GET/.POST/.PUT/.DELETE**) { (data) in
+*process data*
+}
+```
+
+### Fetch with Method Type and Authorization code:
+
+Fetch data from a URL with authorization code.
+
+```
+AwesomeFetcher.fetchData(**“YOUR URL STRING”**,
+method: **.GET/.POST/.PUT/.DELETE**,
+authorization: **“AUTHORIZATION CODE”**) { (data) in
+*process data*
+}
+```
+
+### Fetch with Method Type and JSON Body:
+
+Fetch data from URL with JSON Body
+
+```
+AwesomeFetcher.fetchData(**“YOUR URL STRING”**,
+method: **.GET/.POST/.PUT/.DELETE**,
+jsonBody: **[String : AnyObject]?**,
+authorization: **“AUTHORIZATION CODE”**) { (data) in
+*process data*
+}
+```
+
+### The complete Fetch request:
+
+Fetch data from URL with any combination of properties.
+
+```
+AwesomeFetcher.fetchData(**“YOUR URL STRING”**,
+method: **.GET/.POST/.PUT/.DELETE**,
+bodyData: **NSData?**,
+headerValues: **[[String]]?**,
+shouldCache: **Bool**, completion: { (data) in
+*process data*
+}
+```
+
+## Parsing JSON data
+
+Parse NSData into a Dictionary and parse to Coredata Object.
+
+**Let's consider this Unsplash JSON object:**
+```
+[{
+"format":"jpeg",
+"width":5616,
+"height":3744,
+"filename":"0000_yC-Yzbqy7PY.jpeg",
+"id":0,
+"author":"Alejandro Escamilla",
+"author_url":"https://unsplash.com/@alejandroescamilla",
+"post_url":"https://unsplash.com/photos/yC-Yzbqy7PY"},
+{...}]
+```
+
+### NSData to JSON Dictionary
+
+Gets JSON Object from NSData
+
+```
+let jsonObject = AwesomeParser.jsonObject(data)
+```
+
+### Parsing JSON Dictionary to Coredata Object
+
+Consider you have the **UnsplashImage** Coredata object, to parse it, use one of the parsing helpers:
+```
+parseInt(jsonObject, key: "KEY")
+parseDouble(jsonObject, key: "KEY")
+parseString(jsonObject, key: "KEY")
+parseDate(jsonObject, key: "KEY")
+parseBool(jsonObject, key: "KEY")
+```
+
+```
+let objectId = parseInt(jsonObject, key: "id")
+
+//gets object with objectId, to make sure there is only one object in Coredata with that ID. If it's nil, create a new object and use it.
+if let unsplashImage = getObject(predicate: NSPredicate(format: "objectId == %d", objectId.intValue), createIfNil: true) as? UnsplashImage {
+unsplashImage.objectId = objectId
+unsplashImage.width = parseDouble(jsonObject, key: "width")
+unsplashImage.height = parseInt(jsonObject, key: "height")
+unsplashImage.format = parseString(jsonObject, key: "format")
+unsplashImage.filename = parseString(jsonObject, key: "filename")
+unsplashImage.author = parseString(jsonObject, key: "author")
+unsplashImage.authorUrl = parseString(jsonObject, key: "author_url")
+unsplashImage.postUrl = parseString(jsonObject, key: "post_url")
+}
+```
+
+DOCUMENTATION UNDER DEVELOPMENT…
