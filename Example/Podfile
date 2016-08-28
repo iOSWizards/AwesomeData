@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'AwesomeData_Example' do
+  pod 'AwesomeData', :path => '../'
+
+  target 'AwesomeData_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
