@@ -35,13 +35,17 @@ Coredata code should never belong to AppDelegate file, so with the AwesomeData, 
 
 In AppDelegate:
 - Delete the coredata code (everything below **func applicationWillTerminate(application: UIApplication)**)
-- Add to **didFinishLaunchingWithOptions**
+- Import the library in **AppDelegate**
+```swift
+import AwesomeData
 ```
+- Add to **didFinishLaunchingWithOptions**
+```swift
 AwesomeData.setDatabase("NAME OF YOUR DATABASE FILE WITHOUT EXTENSION")
 //AwesomeData.showLogs = true
 ```
 - Replace / Add to **applicationWillTerminate**
-```
+```swift
 AwesomeData.saveContext()
 ```
 
@@ -51,7 +55,7 @@ AwesomeData.saveContext()
 
 Fetch data from a URL with standard properties.
 
-```
+```swift
 AwesomeFetcher.fetchData(**“YOUR URL STRING”**) { (data) in
 *process data*
 }
@@ -61,7 +65,7 @@ AwesomeFetcher.fetchData(**“YOUR URL STRING”**) { (data) in
 
 Fetch data from a URL with standard properties, but choosing the method type.
 
-```
+```swift
 AwesomeFetcher.fetchData(**“YOUR URL STRING”**,
 method: **.GET/.POST/.PUT/.DELETE**) { (data) in
 *process data*
@@ -72,7 +76,7 @@ method: **.GET/.POST/.PUT/.DELETE**) { (data) in
 
 Fetch data from a URL with authorization code.
 
-```
+```swift
 AwesomeFetcher.fetchData(**“YOUR URL STRING”**,
 method: **.GET/.POST/.PUT/.DELETE**,
 authorization: **“AUTHORIZATION CODE”**) { (data) in
@@ -84,7 +88,7 @@ authorization: **“AUTHORIZATION CODE”**) { (data) in
 
 Fetch data from URL with JSON Body
 
-```
+```swift
 AwesomeFetcher.fetchData(**“YOUR URL STRING”**,
 method: **.GET/.POST/.PUT/.DELETE**,
 jsonBody: **[String : AnyObject]?**,
@@ -97,7 +101,7 @@ authorization: **“AUTHORIZATION CODE”**) { (data) in
 
 Fetch data from URL with any combination of properties.
 
-```
+```swift
 AwesomeFetcher.fetchData(**“YOUR URL STRING”**,
 method: **.GET/.POST/.PUT/.DELETE**,
 bodyData: **NSData?**,
@@ -112,7 +116,7 @@ shouldCache: **Bool**, completion: { (data) in
 Parse NSData into a Dictionary and parse to Coredata Object.
 
 **Let's consider this Unsplash JSON object:**
-```
+```ruby
 [{
 "format":"jpeg",
 "width":5616,
@@ -129,14 +133,14 @@ Parse NSData into a Dictionary and parse to Coredata Object.
 
 Gets JSON Object from NSData
 
-```
+```swift
 let jsonObject = AwesomeParser.jsonObject(data)
 ```
 
 ### Parsing JSON Dictionary to Coredata Object
 
 Consider you have the **UnsplashImage** Coredata object, to parse it, use one of the parsing helpers:
-```
+```swift
 parseInt(jsonObject, key: "KEY")
 parseDouble(jsonObject, key: "KEY")
 parseString(jsonObject, key: "KEY")
@@ -144,7 +148,7 @@ parseDate(jsonObject, key: "KEY")
 parseBool(jsonObject, key: "KEY")
 ```
 
-```
+```swift
 let objectId = parseInt(jsonObject, key: "id")
 
 //gets object with objectId, to make sure there is only one object in Coredata with that ID. If it's nil, create a new object and use it.
