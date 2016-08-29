@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A9D5FC91D73C15200596DB3 /* AwesomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB31D73C15200596DB3 /* AwesomeData.swift */; };
+		0A9D5FCA1D73C15200596DB3 /* AwesomeDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB51D73C15200596DB3 /* AwesomeDataAccess.swift */; };
+		0A9D5FCB1D73C15200596DB3 /* NSManagedObject+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB61D73C15200596DB3 /* NSManagedObject+Awesome.swift */; };
+		0A9D5FCC1D73C15200596DB3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB81D73C15200596DB3 /* Extensions.swift */; };
+		0A9D5FCD1D73C15200596DB3 /* AwesomeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FBB1D73C15200596DB3 /* AwesomeCache.swift */; };
+		0A9D5FCE1D73C15200596DB3 /* AwesomeCache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FBC1D73C15200596DB3 /* AwesomeCache.xcdatamodeld */; };
+		0A9D5FCF1D73C15200596DB3 /* AwesomeCacheFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FBE1D73C15200596DB3 /* AwesomeCacheFile.swift */; };
+		0A9D5FD01D73C15200596DB3 /* UIButton+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC01D73C15200596DB3 /* UIButton+Awesome.swift */; };
+		0A9D5FD11D73C15200596DB3 /* UICollectionViewCell+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC11D73C15200596DB3 /* UICollectionViewCell+Awesome.swift */; };
+		0A9D5FD21D73C15200596DB3 /* UIImage+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC21D73C15200596DB3 /* UIImage+Awesome.swift */; };
+		0A9D5FD31D73C15200596DB3 /* UIImageView+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC31D73C15200596DB3 /* UIImageView+Awesome.swift */; };
+		0A9D5FD41D73C15200596DB3 /* UITableViewCell+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC41D73C15200596DB3 /* UITableViewCell+Awesome.swift */; };
+		0A9D5FD51D73C15200596DB3 /* AwesomeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC61D73C15200596DB3 /* AwesomeFetcher.swift */; };
+		0A9D5FD61D73C15200596DB3 /* AwesomeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC81D73C15200596DB3 /* AwesomeParser.swift */; };
 		1D93334047D40577B949B0C070B783F9 /* AwesomeData-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BEB538568AECDAC775F190D2DED971C /* AwesomeData-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		443174F73034D6E8BECDED1E8F4AAFF9 /* Pods-AwesomeData_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22464BDEE94C026E40A0602FE8320CE2 /* Pods-AwesomeData_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A0803FC229E7CC37A41C92BE36793E9 /* Pods-AwesomeData_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 099DCCC47F37BB6DC929708D7DD70E6B /* Pods-AwesomeData_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -14,7 +28,6 @@
 		8BFE1E18314F328F76500B8A55579078 /* Pods-AwesomeData_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E03C7537D4025B4C535D8D07508E96 /* Pods-AwesomeData_Tests-dummy.m */; };
 		9809919744A07731989ED2E9208E49E4 /* AwesomeData-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F425ECA20C84D3E7EE5C35D8889C2 /* AwesomeData-dummy.m */; };
 		A1C37417AD95F6A58B2A98658A439D93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		BC391E70A80A8B93BB2682CE12623618 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB58AC19A7A17EBE0E5839A7B91C8518 /* ReplaceMe.swift */; };
 		CB3C7C4C9253AB0281408F044C6BE286 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		FCA1FD71707484CB08369EB686D99F80 /* Pods-AwesomeData_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 43363382F9BE5F54F44C51C2F3E4C3E3 /* Pods-AwesomeData_Example-dummy.m */; };
 /* End PBXBuildFile section */
@@ -33,6 +46,20 @@
 		038E318D0901FF9D7BF8739741CAA26D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03BD39FA286D4F0DF6143A37EBEA95A7 /* Pods_AwesomeData_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeData_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		099DCCC47F37BB6DC929708D7DD70E6B /* Pods-AwesomeData_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeData_Tests-umbrella.h"; sourceTree = "<group>"; };
+		0A9D5FB31D73C15200596DB3 /* AwesomeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeData.swift; sourceTree = "<group>"; };
+		0A9D5FB51D73C15200596DB3 /* AwesomeDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeDataAccess.swift; sourceTree = "<group>"; };
+		0A9D5FB61D73C15200596DB3 /* NSManagedObject+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Awesome.swift"; sourceTree = "<group>"; };
+		0A9D5FB81D73C15200596DB3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0A9D5FBB1D73C15200596DB3 /* AwesomeCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCache.swift; sourceTree = "<group>"; };
+		0A9D5FBD1D73C15200596DB3 /* AwesomeCache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AwesomeCache.xcdatamodel; sourceTree = "<group>"; };
+		0A9D5FBE1D73C15200596DB3 /* AwesomeCacheFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCacheFile.swift; sourceTree = "<group>"; };
+		0A9D5FC01D73C15200596DB3 /* UIButton+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Awesome.swift"; sourceTree = "<group>"; };
+		0A9D5FC11D73C15200596DB3 /* UICollectionViewCell+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Awesome.swift"; sourceTree = "<group>"; };
+		0A9D5FC21D73C15200596DB3 /* UIImage+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Awesome.swift"; sourceTree = "<group>"; };
+		0A9D5FC31D73C15200596DB3 /* UIImageView+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Awesome.swift"; sourceTree = "<group>"; };
+		0A9D5FC41D73C15200596DB3 /* UITableViewCell+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Awesome.swift"; sourceTree = "<group>"; };
+		0A9D5FC61D73C15200596DB3 /* AwesomeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeFetcher.swift; sourceTree = "<group>"; };
+		0A9D5FC81D73C15200596DB3 /* AwesomeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeParser.swift; sourceTree = "<group>"; };
 		0EACB737DA04456F9962C415A2A40169 /* Pods-AwesomeData_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeData_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1A13EFACD9CE638ECD0970BA782AC582 /* Pods-AwesomeData_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeData_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		22464BDEE94C026E40A0602FE8320CE2 /* Pods-AwesomeData_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeData_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -60,7 +87,6 @@
 		D0B92EDDBBB41FCEE9DE5700E45D3BA4 /* Pods-AwesomeData_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AwesomeData_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E521C949DC0DE62284DAADD6FD8223BC /* AwesomeData-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeData-prefix.pch"; sourceTree = "<group>"; };
 		E92ECF3EEDCFD6A82F05EAC932B55F86 /* Pods-AwesomeData_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AwesomeData_Example-resources.sh"; sourceTree = "<group>"; };
-		EB58AC19A7A17EBE0E5839A7B91C8518 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		FE1299E055324355ED5CDA5E795C1F77 /* Pods-AwesomeData_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeData_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +134,83 @@
 			);
 			name = "Pods-AwesomeData_Example";
 			path = "Target Support Files/Pods-AwesomeData_Example";
+			sourceTree = "<group>";
+		};
+		0A9D5FB21D73C15200596DB3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D5FB31D73C15200596DB3 /* AwesomeData.swift */,
+				0A9D5FB41D73C15200596DB3 /* CoreData */,
+				0A9D5FB71D73C15200596DB3 /* Formatting */,
+				0A9D5FB91D73C15200596DB3 /* Online */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0A9D5FB41D73C15200596DB3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D5FB51D73C15200596DB3 /* AwesomeDataAccess.swift */,
+				0A9D5FB61D73C15200596DB3 /* NSManagedObject+Awesome.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		0A9D5FB71D73C15200596DB3 /* Formatting */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D5FB81D73C15200596DB3 /* Extensions.swift */,
+			);
+			path = Formatting;
+			sourceTree = "<group>";
+		};
+		0A9D5FB91D73C15200596DB3 /* Online */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D5FBA1D73C15200596DB3 /* Cache */,
+				0A9D5FBF1D73C15200596DB3 /* Extensions */,
+				0A9D5FC51D73C15200596DB3 /* Fetcher */,
+				0A9D5FC71D73C15200596DB3 /* Parser */,
+			);
+			path = Online;
+			sourceTree = "<group>";
+		};
+		0A9D5FBA1D73C15200596DB3 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D5FBB1D73C15200596DB3 /* AwesomeCache.swift */,
+				0A9D5FBC1D73C15200596DB3 /* AwesomeCache.xcdatamodeld */,
+				0A9D5FBE1D73C15200596DB3 /* AwesomeCacheFile.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		0A9D5FBF1D73C15200596DB3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D5FC01D73C15200596DB3 /* UIButton+Awesome.swift */,
+				0A9D5FC11D73C15200596DB3 /* UICollectionViewCell+Awesome.swift */,
+				0A9D5FC21D73C15200596DB3 /* UIImage+Awesome.swift */,
+				0A9D5FC31D73C15200596DB3 /* UIImageView+Awesome.swift */,
+				0A9D5FC41D73C15200596DB3 /* UITableViewCell+Awesome.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A9D5FC51D73C15200596DB3 /* Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D5FC61D73C15200596DB3 /* AwesomeFetcher.swift */,
+			);
+			path = Fetcher;
+			sourceTree = "<group>";
+		};
+		0A9D5FC71D73C15200596DB3 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D5FC81D73C15200596DB3 /* AwesomeParser.swift */,
+			);
+			path = Parser;
 			sourceTree = "<group>";
 		};
 		0CB1F562DFCD71947F94C15773BC36EE /* Products */ = {
@@ -209,17 +312,9 @@
 		CFB980A31629BE6B19D6485C2A934F1B /* AwesomeData */ = {
 			isa = PBXGroup;
 			children = (
-				D0D5A99F2036A005A20C55CB39EA31D0 /* Classes */,
+				0A9D5FB21D73C15200596DB3 /* Classes */,
 			);
 			path = AwesomeData;
-			sourceTree = "<group>";
-		};
-		D0D5A99F2036A005A20C55CB39EA31D0 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				EB58AC19A7A17EBE0E5839A7B91C8518 /* ReplaceMe.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,8 +448,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9D5FCC1D73C15200596DB3 /* Extensions.swift in Sources */,
+				0A9D5FD51D73C15200596DB3 /* AwesomeFetcher.swift in Sources */,
 				9809919744A07731989ED2E9208E49E4 /* AwesomeData-dummy.m in Sources */,
-				BC391E70A80A8B93BB2682CE12623618 /* ReplaceMe.swift in Sources */,
+				0A9D5FCB1D73C15200596DB3 /* NSManagedObject+Awesome.swift in Sources */,
+				0A9D5FCA1D73C15200596DB3 /* AwesomeDataAccess.swift in Sources */,
+				0A9D5FD11D73C15200596DB3 /* UICollectionViewCell+Awesome.swift in Sources */,
+				0A9D5FCD1D73C15200596DB3 /* AwesomeCache.swift in Sources */,
+				0A9D5FC91D73C15200596DB3 /* AwesomeData.swift in Sources */,
+				0A9D5FCF1D73C15200596DB3 /* AwesomeCacheFile.swift in Sources */,
+				0A9D5FD31D73C15200596DB3 /* UIImageView+Awesome.swift in Sources */,
+				0A9D5FCE1D73C15200596DB3 /* AwesomeCache.xcdatamodeld in Sources */,
+				0A9D5FD21D73C15200596DB3 /* UIImage+Awesome.swift in Sources */,
+				0A9D5FD01D73C15200596DB3 /* UIButton+Awesome.swift in Sources */,
+				0A9D5FD41D73C15200596DB3 /* UITableViewCell+Awesome.swift in Sources */,
+				0A9D5FD61D73C15200596DB3 /* AwesomeParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +790,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0A9D5FBC1D73C15200596DB3 /* AwesomeCache.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0A9D5FBD1D73C15200596DB3 /* AwesomeCache.xcdatamodel */,
+			);
+			currentVersion = 0A9D5FBD1D73C15200596DB3 /* AwesomeCache.xcdatamodel */;
+			path = AwesomeCache.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 }
