@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A1214B61D77DB77005EC10D /* AwesomeCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1214B51D77DB77005EC10D /* AwesomeCacheManager.swift */; };
 		0A9D5FC91D73C15200596DB3 /* AwesomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB31D73C15200596DB3 /* AwesomeData.swift */; };
 		0A9D5FCA1D73C15200596DB3 /* AwesomeDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB51D73C15200596DB3 /* AwesomeDataAccess.swift */; };
 		0A9D5FCB1D73C15200596DB3 /* NSManagedObject+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB61D73C15200596DB3 /* NSManagedObject+Awesome.swift */; };
 		0A9D5FCC1D73C15200596DB3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB81D73C15200596DB3 /* Extensions.swift */; };
-		0A9D5FCD1D73C15200596DB3 /* AwesomeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FBB1D73C15200596DB3 /* AwesomeCache.swift */; };
-		0A9D5FCE1D73C15200596DB3 /* AwesomeCache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FBC1D73C15200596DB3 /* AwesomeCache.xcdatamodeld */; };
-		0A9D5FCF1D73C15200596DB3 /* AwesomeCacheFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FBE1D73C15200596DB3 /* AwesomeCacheFile.swift */; };
-		0A9D5FD01D73C15200596DB3 /* UIButton+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC01D73C15200596DB3 /* UIButton+Awesome.swift */; };
-		0A9D5FD11D73C15200596DB3 /* UICollectionViewCell+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC11D73C15200596DB3 /* UICollectionViewCell+Awesome.swift */; };
-		0A9D5FD21D73C15200596DB3 /* UIImage+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC21D73C15200596DB3 /* UIImage+Awesome.swift */; };
-		0A9D5FD31D73C15200596DB3 /* UIImageView+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC31D73C15200596DB3 /* UIImageView+Awesome.swift */; };
-		0A9D5FD41D73C15200596DB3 /* UITableViewCell+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC41D73C15200596DB3 /* UITableViewCell+Awesome.swift */; };
-		0A9D5FD51D73C15200596DB3 /* AwesomeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC61D73C15200596DB3 /* AwesomeFetcher.swift */; };
-		0A9D5FD61D73C15200596DB3 /* AwesomeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FC81D73C15200596DB3 /* AwesomeParser.swift */; };
+		0AAA34D01D782A890015F772 /* AwesomeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C11D782A890015F772 /* AwesomeCache.swift */; };
+		0AAA34D11D782A890015F772 /* AwesomeCache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C21D782A890015F772 /* AwesomeCache.xcdatamodeld */; };
+		0AAA34D21D782A890015F772 /* AwesomeCacheFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C41D782A890015F772 /* AwesomeCacheFile.swift */; };
+		0AAA34D31D782A890015F772 /* AwesomeCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C51D782A890015F772 /* AwesomeCacheManager.swift */; };
+		0AAA34D41D782A890015F772 /* UIButton+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C71D782A890015F772 /* UIButton+Awesome.swift */; };
+		0AAA34D51D782A890015F772 /* UICollectionViewCell+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C81D782A890015F772 /* UICollectionViewCell+Awesome.swift */; };
+		0AAA34D61D782A890015F772 /* UIImage+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C91D782A890015F772 /* UIImage+Awesome.swift */; };
+		0AAA34D71D782A890015F772 /* UIImageView+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34CA1D782A890015F772 /* UIImageView+Awesome.swift */; };
+		0AAA34D81D782A890015F772 /* UITableViewCell+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34CB1D782A890015F772 /* UITableViewCell+Awesome.swift */; };
+		0AAA34D91D782A890015F772 /* AwesomeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34CD1D782A890015F772 /* AwesomeFetcher.swift */; };
+		0AAA34DA1D782A890015F772 /* AwesomeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34CF1D782A890015F772 /* AwesomeParser.swift */; };
 		1D93334047D40577B949B0C070B783F9 /* AwesomeData-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BEB538568AECDAC775F190D2DED971C /* AwesomeData-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		443174F73034D6E8BECDED1E8F4AAFF9 /* Pods-AwesomeData_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22464BDEE94C026E40A0602FE8320CE2 /* Pods-AwesomeData_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A0803FC229E7CC37A41C92BE36793E9 /* Pods-AwesomeData_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 099DCCC47F37BB6DC929708D7DD70E6B /* Pods-AwesomeData_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,21 +47,21 @@
 		038E318D0901FF9D7BF8739741CAA26D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03BD39FA286D4F0DF6143A37EBEA95A7 /* Pods_AwesomeData_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeData_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		099DCCC47F37BB6DC929708D7DD70E6B /* Pods-AwesomeData_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeData_Tests-umbrella.h"; sourceTree = "<group>"; };
-		0A1214B51D77DB77005EC10D /* AwesomeCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCacheManager.swift; sourceTree = "<group>"; };
 		0A9D5FB31D73C15200596DB3 /* AwesomeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeData.swift; sourceTree = "<group>"; };
 		0A9D5FB51D73C15200596DB3 /* AwesomeDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeDataAccess.swift; sourceTree = "<group>"; };
 		0A9D5FB61D73C15200596DB3 /* NSManagedObject+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Awesome.swift"; sourceTree = "<group>"; };
 		0A9D5FB81D73C15200596DB3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		0A9D5FBB1D73C15200596DB3 /* AwesomeCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCache.swift; sourceTree = "<group>"; };
-		0A9D5FBD1D73C15200596DB3 /* AwesomeCache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AwesomeCache.xcdatamodel; sourceTree = "<group>"; };
-		0A9D5FBE1D73C15200596DB3 /* AwesomeCacheFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCacheFile.swift; sourceTree = "<group>"; };
-		0A9D5FC01D73C15200596DB3 /* UIButton+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Awesome.swift"; sourceTree = "<group>"; };
-		0A9D5FC11D73C15200596DB3 /* UICollectionViewCell+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Awesome.swift"; sourceTree = "<group>"; };
-		0A9D5FC21D73C15200596DB3 /* UIImage+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Awesome.swift"; sourceTree = "<group>"; };
-		0A9D5FC31D73C15200596DB3 /* UIImageView+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Awesome.swift"; sourceTree = "<group>"; };
-		0A9D5FC41D73C15200596DB3 /* UITableViewCell+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Awesome.swift"; sourceTree = "<group>"; };
-		0A9D5FC61D73C15200596DB3 /* AwesomeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeFetcher.swift; sourceTree = "<group>"; };
-		0A9D5FC81D73C15200596DB3 /* AwesomeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeParser.swift; sourceTree = "<group>"; };
+		0AAA34C11D782A890015F772 /* AwesomeCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCache.swift; sourceTree = "<group>"; };
+		0AAA34C31D782A890015F772 /* AwesomeCache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AwesomeCache.xcdatamodel; sourceTree = "<group>"; };
+		0AAA34C41D782A890015F772 /* AwesomeCacheFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCacheFile.swift; sourceTree = "<group>"; };
+		0AAA34C51D782A890015F772 /* AwesomeCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCacheManager.swift; sourceTree = "<group>"; };
+		0AAA34C71D782A890015F772 /* UIButton+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Awesome.swift"; sourceTree = "<group>"; };
+		0AAA34C81D782A890015F772 /* UICollectionViewCell+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Awesome.swift"; sourceTree = "<group>"; };
+		0AAA34C91D782A890015F772 /* UIImage+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Awesome.swift"; sourceTree = "<group>"; };
+		0AAA34CA1D782A890015F772 /* UIImageView+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Awesome.swift"; sourceTree = "<group>"; };
+		0AAA34CB1D782A890015F772 /* UITableViewCell+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Awesome.swift"; sourceTree = "<group>"; };
+		0AAA34CD1D782A890015F772 /* AwesomeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeFetcher.swift; sourceTree = "<group>"; };
+		0AAA34CF1D782A890015F772 /* AwesomeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeParser.swift; sourceTree = "<group>"; };
 		0EACB737DA04456F9962C415A2A40169 /* Pods-AwesomeData_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeData_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1A13EFACD9CE638ECD0970BA782AC582 /* Pods-AwesomeData_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeData_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		22464BDEE94C026E40A0602FE8320CE2 /* Pods-AwesomeData_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeData_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -142,9 +142,12 @@
 			isa = PBXGroup;
 			children = (
 				0A9D5FB31D73C15200596DB3 /* AwesomeData.swift */,
+				0AAA34C01D782A890015F772 /* Cache */,
+				0AAA34C61D782A890015F772 /* Extensions */,
+				0AAA34CC1D782A890015F772 /* Fetcher */,
+				0AAA34CE1D782A890015F772 /* Parser */,
 				0A9D5FB41D73C15200596DB3 /* CoreData */,
 				0A9D5FB71D73C15200596DB3 /* Formatting */,
-				0A9D5FB91D73C15200596DB3 /* Online */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -166,52 +169,41 @@
 			path = Formatting;
 			sourceTree = "<group>";
 		};
-		0A9D5FB91D73C15200596DB3 /* Online */ = {
+		0AAA34C01D782A890015F772 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				0A9D5FBA1D73C15200596DB3 /* Cache */,
-				0A9D5FBF1D73C15200596DB3 /* Extensions */,
-				0A9D5FC51D73C15200596DB3 /* Fetcher */,
-				0A9D5FC71D73C15200596DB3 /* Parser */,
-			);
-			path = Online;
-			sourceTree = "<group>";
-		};
-		0A9D5FBA1D73C15200596DB3 /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-				0A1214B51D77DB77005EC10D /* AwesomeCacheManager.swift */,
-				0A9D5FBB1D73C15200596DB3 /* AwesomeCache.swift */,
-				0A9D5FBC1D73C15200596DB3 /* AwesomeCache.xcdatamodeld */,
-				0A9D5FBE1D73C15200596DB3 /* AwesomeCacheFile.swift */,
+				0AAA34C11D782A890015F772 /* AwesomeCache.swift */,
+				0AAA34C21D782A890015F772 /* AwesomeCache.xcdatamodeld */,
+				0AAA34C41D782A890015F772 /* AwesomeCacheFile.swift */,
+				0AAA34C51D782A890015F772 /* AwesomeCacheManager.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
 		};
-		0A9D5FBF1D73C15200596DB3 /* Extensions */ = {
+		0AAA34C61D782A890015F772 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0A9D5FC01D73C15200596DB3 /* UIButton+Awesome.swift */,
-				0A9D5FC11D73C15200596DB3 /* UICollectionViewCell+Awesome.swift */,
-				0A9D5FC21D73C15200596DB3 /* UIImage+Awesome.swift */,
-				0A9D5FC31D73C15200596DB3 /* UIImageView+Awesome.swift */,
-				0A9D5FC41D73C15200596DB3 /* UITableViewCell+Awesome.swift */,
+				0AAA34C71D782A890015F772 /* UIButton+Awesome.swift */,
+				0AAA34C81D782A890015F772 /* UICollectionViewCell+Awesome.swift */,
+				0AAA34C91D782A890015F772 /* UIImage+Awesome.swift */,
+				0AAA34CA1D782A890015F772 /* UIImageView+Awesome.swift */,
+				0AAA34CB1D782A890015F772 /* UITableViewCell+Awesome.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		0A9D5FC51D73C15200596DB3 /* Fetcher */ = {
+		0AAA34CC1D782A890015F772 /* Fetcher */ = {
 			isa = PBXGroup;
 			children = (
-				0A9D5FC61D73C15200596DB3 /* AwesomeFetcher.swift */,
+				0AAA34CD1D782A890015F772 /* AwesomeFetcher.swift */,
 			);
 			path = Fetcher;
 			sourceTree = "<group>";
 		};
-		0A9D5FC71D73C15200596DB3 /* Parser */ = {
+		0AAA34CE1D782A890015F772 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
-				0A9D5FC81D73C15200596DB3 /* AwesomeParser.swift */,
+				0AAA34CF1D782A890015F772 /* AwesomeParser.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -452,21 +444,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A9D5FCC1D73C15200596DB3 /* Extensions.swift in Sources */,
-				0A9D5FD51D73C15200596DB3 /* AwesomeFetcher.swift in Sources */,
 				9809919744A07731989ED2E9208E49E4 /* AwesomeData-dummy.m in Sources */,
 				0A9D5FCB1D73C15200596DB3 /* NSManagedObject+Awesome.swift in Sources */,
-				0A1214B61D77DB77005EC10D /* AwesomeCacheManager.swift in Sources */,
+				0AAA34D91D782A890015F772 /* AwesomeFetcher.swift in Sources */,
+				0AAA34D41D782A890015F772 /* UIButton+Awesome.swift in Sources */,
+				0AAA34D31D782A890015F772 /* AwesomeCacheManager.swift in Sources */,
+				0AAA34D81D782A890015F772 /* UITableViewCell+Awesome.swift in Sources */,
 				0A9D5FCA1D73C15200596DB3 /* AwesomeDataAccess.swift in Sources */,
-				0A9D5FD11D73C15200596DB3 /* UICollectionViewCell+Awesome.swift in Sources */,
-				0A9D5FCD1D73C15200596DB3 /* AwesomeCache.swift in Sources */,
+				0AAA34D01D782A890015F772 /* AwesomeCache.swift in Sources */,
+				0AAA34D71D782A890015F772 /* UIImageView+Awesome.swift in Sources */,
 				0A9D5FC91D73C15200596DB3 /* AwesomeData.swift in Sources */,
-				0A9D5FCF1D73C15200596DB3 /* AwesomeCacheFile.swift in Sources */,
-				0A9D5FD31D73C15200596DB3 /* UIImageView+Awesome.swift in Sources */,
-				0A9D5FCE1D73C15200596DB3 /* AwesomeCache.xcdatamodeld in Sources */,
-				0A9D5FD21D73C15200596DB3 /* UIImage+Awesome.swift in Sources */,
-				0A9D5FD01D73C15200596DB3 /* UIButton+Awesome.swift in Sources */,
-				0A9D5FD41D73C15200596DB3 /* UITableViewCell+Awesome.swift in Sources */,
-				0A9D5FD61D73C15200596DB3 /* AwesomeParser.swift in Sources */,
+				0AAA34D21D782A890015F772 /* AwesomeCacheFile.swift in Sources */,
+				0AAA34DA1D782A890015F772 /* AwesomeParser.swift in Sources */,
+				0AAA34D61D782A890015F772 /* UIImage+Awesome.swift in Sources */,
+				0AAA34D51D782A890015F772 /* UICollectionViewCell+Awesome.swift in Sources */,
+				0AAA34D11D782A890015F772 /* AwesomeCache.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,12 +788,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0A9D5FBC1D73C15200596DB3 /* AwesomeCache.xcdatamodeld */ = {
+		0AAA34C21D782A890015F772 /* AwesomeCache.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0A9D5FBD1D73C15200596DB3 /* AwesomeCache.xcdatamodel */,
+				0AAA34C31D782A890015F772 /* AwesomeCache.xcdatamodel */,
 			);
-			currentVersion = 0A9D5FBD1D73C15200596DB3 /* AwesomeCache.xcdatamodel */;
+			currentVersion = 0AAA34C31D782A890015F772 /* AwesomeCache.xcdatamodel */;
 			path = AwesomeCache.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
