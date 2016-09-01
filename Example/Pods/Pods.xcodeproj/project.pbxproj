@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1214B61D77DB77005EC10D /* AwesomeCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1214B51D77DB77005EC10D /* AwesomeCacheManager.swift */; };
 		0A9D5FC91D73C15200596DB3 /* AwesomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB31D73C15200596DB3 /* AwesomeData.swift */; };
 		0A9D5FCA1D73C15200596DB3 /* AwesomeDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB51D73C15200596DB3 /* AwesomeDataAccess.swift */; };
 		0A9D5FCB1D73C15200596DB3 /* NSManagedObject+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB61D73C15200596DB3 /* NSManagedObject+Awesome.swift */; };
@@ -46,6 +47,7 @@
 		038E318D0901FF9D7BF8739741CAA26D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03BD39FA286D4F0DF6143A37EBEA95A7 /* Pods_AwesomeData_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeData_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		099DCCC47F37BB6DC929708D7DD70E6B /* Pods-AwesomeData_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeData_Tests-umbrella.h"; sourceTree = "<group>"; };
+		0A1214B51D77DB77005EC10D /* AwesomeCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCacheManager.swift; sourceTree = "<group>"; };
 		0A9D5FB31D73C15200596DB3 /* AwesomeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeData.swift; sourceTree = "<group>"; };
 		0A9D5FB51D73C15200596DB3 /* AwesomeDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeDataAccess.swift; sourceTree = "<group>"; };
 		0A9D5FB61D73C15200596DB3 /* NSManagedObject+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Awesome.swift"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		0A9D5FBA1D73C15200596DB3 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
+				0A1214B51D77DB77005EC10D /* AwesomeCacheManager.swift */,
 				0A9D5FBB1D73C15200596DB3 /* AwesomeCache.swift */,
 				0A9D5FBC1D73C15200596DB3 /* AwesomeCache.xcdatamodeld */,
 				0A9D5FBE1D73C15200596DB3 /* AwesomeCacheFile.swift */,
@@ -452,6 +455,7 @@
 				0A9D5FD51D73C15200596DB3 /* AwesomeFetcher.swift in Sources */,
 				9809919744A07731989ED2E9208E49E4 /* AwesomeData-dummy.m in Sources */,
 				0A9D5FCB1D73C15200596DB3 /* NSManagedObject+Awesome.swift in Sources */,
+				0A1214B61D77DB77005EC10D /* AwesomeCacheManager.swift in Sources */,
 				0A9D5FCA1D73C15200596DB3 /* AwesomeDataAccess.swift in Sources */,
 				0A9D5FD11D73C15200596DB3 /* UICollectionViewCell+Awesome.swift in Sources */,
 				0A9D5FCD1D73C15200596DB3 /* AwesomeCache.swift in Sources */,

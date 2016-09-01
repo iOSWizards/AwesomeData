@@ -21,7 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AwesomeData.setDatabase("AwesomeDataDemo")
         AwesomeData.showLogs = true
         
+        //Configure cache
+        AwesomeCacheManager.configureCache()
+        
         return true
+    }
+    
+    func applicationDidReceiveMemoryWarning(application: UIApplication) {
+        //Clears cache
+        AwesomeCacheManager.clearCache()
     }
 
     func applicationWillResignActive(application: UIApplication) {

@@ -37,16 +37,6 @@ public class AwesomeFetcher: NSObject {
             return nil
         }
         
-        // check if file been cached already
-        if shouldCache {
-            if let object = AwesomeCache.getFromCache(urlString) {
-                completion(data: object)
-                return nil
-            }
-        }
-        
-        // Continue to URL request
-        
         guard let url = NSURL(string: urlString) else{
             completion(data: nil)
             return nil
@@ -55,6 +45,16 @@ public class AwesomeFetcher: NSObject {
         let urlRequest = NSMutableURLRequest(URL: url)
         //urlRequest.cachePolicy = .ReturnCacheDataElseLoad
         
+        // check if file been cached already
+        if shouldCache {
+            if let data = AwesomeCacheManager.getCachedObject(urlRequest) {
+                completion(data: data)
+                return nil
+            }
+        }
+        
+        // Continue to URL request
+
         if let method = method {
             urlRequest.HTTPMethod = method.rawValue
         }
@@ -76,7 +76,7 @@ public class AwesomeFetcher: NSObject {
                     completion(data: nil)
                 }else{
                     if shouldCache {
-                        AwesomeCache.setToCache(data, url: urlString)
+                        AwesomeCacheManager.cacheObject(urlRequest, response: response, data: data)
                     }
                     completion(data: data)
                 }
