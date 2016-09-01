@@ -17,7 +17,7 @@ AwesomeData is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "AwesomeData"
+pod "AwesomeData", git: 'https://github.com/eharrison/AwesomeData.git', tag: '0.1.1'
 ```
 
 ## Author
