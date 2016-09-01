@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AwesomeData'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Handling Coredata has been made easy.'
 
 # This description is used to generate tags and improve search results.
@@ -30,8 +30,8 @@ Fetch data from URLs, parse JSON and save to Coredata easily.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'AwesomeData/Classes/**/*'
-  
+  s.source_files = 'AwesomeData/AwesomeData/Classes/**/*.{swift}'
+
   # s.resource_bundles = {
   #   'AwesomeData' => ['AwesomeData/Assets/*.png']
   # }

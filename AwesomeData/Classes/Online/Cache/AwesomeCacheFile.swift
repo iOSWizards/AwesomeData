@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 import CoreData
-import AwesomeData
+//import AwesomeData
 
 extension AwesomeCacheFile {
     
