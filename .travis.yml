@@ -11,6 +11,6 @@ language: objective-c
 # - pod install --project-directory=Example
 #xcode_project: _Pods.xcodeproj # path to your xcodeproj folder
 #xcode_scheme: AwesomeData
-#script:
-#- set -o pipefail && xcodebuild test -workspace Example/AwesomeData.xcworkspace -scheme AwesomeData-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+script:
+- xcodebuild -workspace Example/AwesomeData.xcworkspace -scheme AwesomeData #-sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
 #- pod lib lint
