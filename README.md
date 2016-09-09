@@ -1,5 +1,5 @@
 # AwesomeData
-
+ 
 <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat" alt="Swift" /></a>
 <a href="https://tldrlegal.com/license/mit-license"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat" alt="License" /></a>
 [![CI Status](http://img.shields.io/travis/Evandro Hoffmann/AwesomeData.svg?style=flat)](https://travis-ci.org/Evandro Hoffmann/AwesomeData)
