@@ -2,16 +2,13 @@
  
 <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat" alt="Swift" /></a>
 <a href="https://tldrlegal.com/license/mit-license"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat" alt="License" /></a>
+[![Version](https://img.shields.io/cocoapods/v/AwesomeData.svg?style=flat)](http://cocoapods.org/pods/AwesomeData)
+[![License](https://img.shields.io/cocoapods/l/AwesomeData.svg?style=flat)](http://cocoapods.org/pods/AwesomeData)
+[![Platform](https://img.shields.io/cocoapods/p/AwesomeData.svg?style=flat)](http://cocoapods.org/pods/AwesomeData)
 ### Continuous integration - branch master
 [![CI Status Master](https://travis-ci.org/iOSWizards/AwesomeData.svg?branch=master)](https://travis-ci.org/iOSWizards/AwesomeData)
-[![Version](https://img.shields.io/cocoapods/v/AwesomeData.svg?style=flat)](http://cocoapods.org/pods/AwesomeData)
-[![License](https://img.shields.io/cocoapods/l/AwesomeData.svg?style=flat)](http://cocoapods.org/pods/AwesomeData)
-[![Platform](https://img.shields.io/cocoapods/p/AwesomeData.svg?style=flat)](http://cocoapods.org/pods/AwesomeData)
 ### Continuous integration - branch develop
 [![CI Status](https://travis-ci.org/iOSWizards/AwesomeData.svg?branch=0.1.5)](https://travis-ci.org/iOSWizards/AwesomeData)
-[![Version](https://img.shields.io/cocoapods/v/AwesomeData.svg?style=flat)](http://cocoapods.org/pods/AwesomeData)
-[![License](https://img.shields.io/cocoapods/l/AwesomeData.svg?style=flat)](http://cocoapods.org/pods/AwesomeData)
-[![Platform](https://img.shields.io/cocoapods/p/AwesomeData.svg?style=flat)](http://cocoapods.org/pods/AwesomeData)
 
 ## Example
 
