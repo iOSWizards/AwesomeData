@@ -13,4 +13,5 @@ language: objective-c
 #xcode_scheme: AwesomeData
 script:
 - xcodebuild -workspace Example/AwesomeData.xcworkspace -scheme AwesomeData #-sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+- xcodebuild CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -workspace Example/AwesomeData.xcworkspace -scheme AwesomeData-Example
 #- pod lib lint
