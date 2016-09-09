@@ -26,6 +26,10 @@ pod "AwesomeData", git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0
 
 Evandro Hoffmann, evandro@itsdayoff.com
 
+## Contributor
+
+Leonardo Ferreira, leonardo.kaminski.ferreira@gmail.com
+
 ## License
 
 AwesomeData is available under the MIT license. See the LICENSE file for more info.
