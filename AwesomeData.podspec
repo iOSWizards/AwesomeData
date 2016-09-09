@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AwesomeData'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'Handling Coredata has been made easy.'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 Fetch data from URLs, parse JSON and save to Coredata easily.
                        DESC
 
-  s.homepage         = 'https://github.com/eharrison/AwesomeData'
+  s.homepage         = 'https://github.com/iOSWizards/AwesomeData'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Evandro Hoffmann' => 'evandro@itsdayoff.com' }
-  s.source           = { :git => 'https://github.com/eharrison/AwesomeData.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/iOSWizards/AwesomeData.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
