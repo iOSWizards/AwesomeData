@@ -25,25 +25,25 @@ extension UnsplashImage {
 
 class UnsplashImage: NSManagedObject {
     
-    func imageUrl(size: CGSize = CGSize(width: 0, height: 0)) -> String {
+    func imageUrl(_ size: CGSize = CGSize(width: 0, height: 0)) -> String {
         guard let objectId = objectId else{
             return ""
         }
         
         var customSize = size
         if customSize.width == 0 {
-            customSize.width = CGFloat(self.width!.intValue)
+            customSize.width = CGFloat(self.width!.int32Value)
         }
         if customSize.height == 0 {
-            customSize.height = CGFloat(self.height!.intValue)
+            customSize.height = CGFloat(self.height!.int32Value)
         }
         
-        return String(format:"https://unsplash.it/%d/%d?image=%d", Int(customSize.width), Int(customSize.height), objectId.intValue)
+        return String(format:"https://unsplash.it/%d/%d?image=%d", Int(customSize.width), Int(customSize.height), objectId.int32Value)
     }
 
     //MARK: - JSON PARSING
     
-    static func parseJSONArray(jsonArray: AnyObject?) -> [UnsplashImage]{
+    static func parseJSONArray(_ jsonArray: AnyObject?) -> [UnsplashImage]{
         var objects = [UnsplashImage]()
         
         if let jsonArray = jsonArray as? [[String: AnyObject]] {
@@ -57,10 +57,10 @@ class UnsplashImage: NSManagedObject {
         return objects
     }
 
-    static func parseJSONObject(jsonObject: [String: AnyObject]) -> UnsplashImage?{
+    static func parseJSONObject(_ jsonObject: [String: AnyObject]) -> UnsplashImage?{
         
         let objectId = parseInt(jsonObject, key: "id")
-        if let unsplashImage = getObject(predicate: NSPredicate(format: "objectId == %d", objectId.intValue), createIfNil: true) as? UnsplashImage {
+        if let unsplashImage = getObject(predicate: NSPredicate(format: "objectId == %d", objectId.int32Value), createIfNil: true) as? UnsplashImage {
             unsplashImage.objectId = objectId
             unsplashImage.width = parseDouble(jsonObject, key: "width")
             unsplashImage.height = parseInt(jsonObject, key: "height")

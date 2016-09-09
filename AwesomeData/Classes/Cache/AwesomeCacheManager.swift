@@ -8,33 +8,33 @@
 
 import UIKit
 
-public class AwesomeCacheManager: NSObject {
+open class AwesomeCacheManager: NSObject {
 
     /*
     *   Sets the cache size for the application
     *   @param memorySize: Size of cache in memory
     *   @param diskSize: Size of cache in disk
     */
-    public static func configureCache(withMemorySize memorySize: Int = 4, diskSize: Int = 20){
+    open static func configureCache(withMemorySize memorySize: Int = 4, diskSize: Int = 20){
         let cacheSizeMemory = memorySize*1024*1024
         let cacheSizeDisk = diskSize*1024*1024
-        let cache = NSURLCache(memoryCapacity: cacheSizeMemory, diskCapacity: cacheSizeDisk, diskPath: nil)
-        NSURLCache.setSharedURLCache(cache)
+        let cache = URLCache(memoryCapacity: cacheSizeMemory, diskCapacity: cacheSizeDisk, diskPath: nil)
+        URLCache.shared = cache
     }
     
     /*
      *   Clears cache
      */
-    public static func clearCache(){
-        NSURLCache.sharedURLCache().removeAllCachedResponses()
+    open static func clearCache(){
+        URLCache.shared.removeAllCachedResponses()
     }
     
     /*
      *   Get cached object for urlRequest
      *   @param urlRequest: Request for cached data
      */
-    public static func getCachedObject(urlRequest: NSURLRequest) -> NSData?{
-        if let cachedObject = NSURLCache.sharedURLCache().cachedResponseForRequest(urlRequest) {
+    open static func getCachedObject(_ urlRequest: URLRequest) -> Data?{
+        if let cachedObject = URLCache.shared.cachedResponse(for: urlRequest) {
             return cachedObject.data
         }
         return nil
@@ -44,7 +44,7 @@ public class AwesomeCacheManager: NSObject {
      *   Set object to cache
      *   @param data: data to cache
      */
-    public static func cacheObject(urlRequest: NSURLRequest?, response: NSURLResponse?, data: NSData?){
+    open static func cacheObject(_ urlRequest: URLRequest?, response: URLResponse?, data: Data?){
         guard let urlRequest = urlRequest else{
             return
         }
@@ -57,8 +57,8 @@ public class AwesomeCacheManager: NSObject {
             return
         }
         
-        let cachedResponse = NSCachedURLResponse(response: response, data: data)
-        NSURLCache.sharedURLCache().storeCachedResponse(cachedResponse, forRequest: urlRequest)
+        let cachedResponse = CachedURLResponse(response: response, data: data)
+        URLCache.shared.storeCachedResponse(cachedResponse, for: urlRequest)
     }
     
 }

@@ -11,9 +11,6 @@
 		0A9D5FCA1D73C15200596DB3 /* AwesomeDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB51D73C15200596DB3 /* AwesomeDataAccess.swift */; };
 		0A9D5FCB1D73C15200596DB3 /* NSManagedObject+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB61D73C15200596DB3 /* NSManagedObject+Awesome.swift */; };
 		0A9D5FCC1D73C15200596DB3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5FB81D73C15200596DB3 /* Extensions.swift */; };
-		0AAA34D01D782A890015F772 /* AwesomeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C11D782A890015F772 /* AwesomeCache.swift */; };
-		0AAA34D11D782A890015F772 /* AwesomeCache.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C21D782A890015F772 /* AwesomeCache.xcdatamodeld */; };
-		0AAA34D21D782A890015F772 /* AwesomeCacheFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C41D782A890015F772 /* AwesomeCacheFile.swift */; };
 		0AAA34D31D782A890015F772 /* AwesomeCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C51D782A890015F772 /* AwesomeCacheManager.swift */; };
 		0AAA34D41D782A890015F772 /* UIButton+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C71D782A890015F772 /* UIButton+Awesome.swift */; };
 		0AAA34D51D782A890015F772 /* UICollectionViewCell+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA34C81D782A890015F772 /* UICollectionViewCell+Awesome.swift */; };
@@ -51,9 +48,6 @@
 		0A9D5FB51D73C15200596DB3 /* AwesomeDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeDataAccess.swift; sourceTree = "<group>"; };
 		0A9D5FB61D73C15200596DB3 /* NSManagedObject+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Awesome.swift"; sourceTree = "<group>"; };
 		0A9D5FB81D73C15200596DB3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		0AAA34C11D782A890015F772 /* AwesomeCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCache.swift; sourceTree = "<group>"; };
-		0AAA34C31D782A890015F772 /* AwesomeCache.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AwesomeCache.xcdatamodel; sourceTree = "<group>"; };
-		0AAA34C41D782A890015F772 /* AwesomeCacheFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCacheFile.swift; sourceTree = "<group>"; };
 		0AAA34C51D782A890015F772 /* AwesomeCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCacheManager.swift; sourceTree = "<group>"; };
 		0AAA34C71D782A890015F772 /* UIButton+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Awesome.swift"; sourceTree = "<group>"; };
 		0AAA34C81D782A890015F772 /* UICollectionViewCell+Awesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Awesome.swift"; sourceTree = "<group>"; };
@@ -172,9 +166,6 @@
 		0AAA34C01D782A890015F772 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				0AAA34C11D782A890015F772 /* AwesomeCache.swift */,
-				0AAA34C21D782A890015F772 /* AwesomeCache.xcdatamodeld */,
-				0AAA34C41D782A890015F772 /* AwesomeCacheFile.swift */,
 				0AAA34C51D782A890015F772 /* AwesomeCacheManager.swift */,
 			);
 			path = Cache;
@@ -402,6 +393,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					2146D64079926F127162668D8010333E = {
+						LastSwiftMigration = 0800;
+					};
+					A6450FD778F558096BBC861906FDE7BD = {
+						LastSwiftMigration = 0800;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -451,14 +450,11 @@
 				0AAA34D31D782A890015F772 /* AwesomeCacheManager.swift in Sources */,
 				0AAA34D81D782A890015F772 /* UITableViewCell+Awesome.swift in Sources */,
 				0A9D5FCA1D73C15200596DB3 /* AwesomeDataAccess.swift in Sources */,
-				0AAA34D01D782A890015F772 /* AwesomeCache.swift in Sources */,
 				0AAA34D71D782A890015F772 /* UIImageView+Awesome.swift in Sources */,
 				0A9D5FC91D73C15200596DB3 /* AwesomeData.swift in Sources */,
-				0AAA34D21D782A890015F772 /* AwesomeCacheFile.swift in Sources */,
 				0AAA34DA1D782A890015F772 /* AwesomeParser.swift in Sources */,
 				0AAA34D61D782A890015F772 /* UIImage+Awesome.swift in Sources */,
 				0AAA34D51D782A890015F772 /* UICollectionViewCell+Awesome.swift in Sources */,
-				0AAA34D11D782A890015F772 /* AwesomeCache.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +531,7 @@
 				PRODUCT_NAME = AwesomeData;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -601,6 +598,7 @@
 				PRODUCT_NAME = Pods_AwesomeData_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -631,6 +629,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -740,6 +739,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -786,19 +786,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0AAA34C21D782A890015F772 /* AwesomeCache.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0AAA34C31D782A890015F772 /* AwesomeCache.xcdatamodel */,
-			);
-			currentVersion = 0AAA34C31D782A890015F772 /* AwesomeCache.xcdatamodel */;
-			path = AwesomeCache.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 }

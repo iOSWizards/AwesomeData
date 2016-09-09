@@ -13,9 +13,9 @@ import CoreData
 //let DATABASE_NAME = "PrevisaoDoTempo"
 //let DATABASE_NAME_SQLITE = "\(DATABASE_NAME).sqlite"
 
-public class AwesomeDataAccess: NSObject {
+open class AwesomeDataAccess: NSObject {
     
-    static public var sharedInstance = AwesomeDataAccess()
+    static open var sharedInstance = AwesomeDataAccess()
     
     var databaseName: String!
     var databaseNameSqlite: String!
@@ -29,7 +29,7 @@ public class AwesomeDataAccess: NSObject {
         setDatabase(databaseName)
     }
     
-    public func setDatabase(name: String){
+    open func setDatabase(_ name: String){
         databaseName = name
         databaseNameSqlite = "\(databaseName).sqlite"
     }
@@ -38,14 +38,14 @@ public class AwesomeDataAccess: NSObject {
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
+        let url = self.applicationDocumentsDirectory.appendingPathComponent("SingleViewCoreData.sqlite")
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
-            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
         } catch {
             var dict = [String: AnyObject]()
-            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
-            dict[NSLocalizedFailureReasonErrorKey] = failureReason
+            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data" as AnyObject?
+            dict[NSLocalizedFailureReasonErrorKey] = failureReason as AnyObject?
             
             dict[NSUnderlyingErrorKey] = error as NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
@@ -58,31 +58,31 @@ public class AwesomeDataAccess: NSObject {
     
     // MARK: - Core Data stack
     
-    public lazy var applicationDocumentsDirectory: NSURL = {
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+    open lazy var applicationDocumentsDirectory: URL = {
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls[urls.count-1]
         }()
     
-    public lazy var managedObjectModel: NSManagedObjectModel = {
+    open lazy var managedObjectModel: NSManagedObjectModel = {
         if self.databaseName == nil {
             NSLog("You forgot setting up the database name")
             abort()
         }
         
-        let modelURL = NSBundle.mainBundle().URLForResource(self.databaseName, withExtension: "momd")!
-        return NSManagedObjectModel(contentsOfURL: modelURL)!
+        let modelURL = Bundle.main.url(forResource: self.databaseName, withExtension: "momd")!
+        return NSManagedObjectModel(contentsOf: modelURL)!
         }()
     
-    public lazy var managedObjectContext: NSManagedObjectContext = {
+    open lazy var managedObjectContext: NSManagedObjectContext = {
         let coordinator = self.persistentStoreCoordinator
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
         }()
     
     // MARK: - Core Data Saving support
     
-    public func saveContext () {
+    open func saveContext () {
         if managedObjectContext.hasChanges {
             do {
                 try managedObjectContext.save()

@@ -13,19 +13,19 @@ class AwesomeDataDemoAPI: NSObject {
 
     static let unsplashListUrl = "https://unsplash.it/list"
     
-    static func fetchUnsplashImages(success:(unsplashImages: [UnsplashImage])->Void, failure:(message: String?)->Void){
-        AwesomeFetcher.fetchData(unsplashListUrl, method: .GET) { (data) in
+    static func fetchUnsplashImages(_ success:@escaping (_ unsplashImages: [UnsplashImage])->Void, failure:@escaping (_ message: String?)->Void){
+        _ = AwesomeFetcher.fetchData(unsplashListUrl, method: .GET) { (data) in
             if let jsonObject = AwesomeParser.jsonObject(data) {
                 let unsplashImages = UnsplashImage.parseJSONArray(jsonObject)
                 UnsplashImage.save()
                 
-                success(unsplashImages: unsplashImages)
+                success(unsplashImages)
             }else{
                 if let data = data {
-                    if let message = String(data: data,encoding: NSUTF8StringEncoding) {
-                        failure(message: message)
+                    if let message = String(data: data,encoding: String.Encoding.utf8) {
+                        failure(message)
                     }else{
-                        failure(message: "Error parsing data")
+                        failure("Error parsing data")
                     }
                 }
             }

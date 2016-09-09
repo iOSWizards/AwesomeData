@@ -8,12 +8,12 @@
 
 import UIKit
 
-extension NSData {
+extension Data {
     public var attributedString: NSAttributedString? {
         do {
             return try NSAttributedString(data: self, options:[
                 NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType,
-                NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
+                NSCharacterEncodingDocumentAttribute: String.Encoding.utf8
                 ], documentAttributes: nil)
         } catch let error as NSError {
             print(error.localizedDescription)
@@ -23,27 +23,27 @@ extension NSData {
 }
 
 extension String {
-    public var utf8Data: NSData? {
-        return dataUsingEncoding(NSUTF8StringEncoding)
+    public var utf8Data: Data? {
+        return data(using: String.Encoding.utf8)
     }
     
     public var stripHTML: String? {
-        return stringByReplacingOccurrencesOfString("<[^>]+>", withString: "", options: .RegularExpressionSearch, range: nil)
+        return replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
 }
 
 extension NSAttributedString {
-    public func heightWithConstrainedWidth(width: CGFloat) -> CGFloat {
-        let constraintRect = CGSize(width: width, height: CGFloat.max)
-        let boundingBox = self.boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
+    public func heightWithConstrainedWidth(_ width: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
         
         return ceil(boundingBox.height)
     }
     
-    public func widthWithConstrainedHeight(height: CGFloat) -> CGFloat {
-        let constraintRect = CGSize(width: CGFloat.max, height: height)
+    public func widthWithConstrainedHeight(_ height: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: CGFloat.greatestFiniteMagnitude, height: height)
         
-        let boundingBox = self.boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
         
         return ceil(boundingBox.width)
     }

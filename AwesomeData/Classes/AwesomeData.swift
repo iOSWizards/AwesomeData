@@ -8,18 +8,18 @@
 
 import UIKit
 
-public class AwesomeData: NSObject {
+open class AwesomeData: NSObject {
 
-    public static let cacheCountLimit     = 50
-    public static let cacheTotalCostLimit = 1024*1024
+    open static let cacheCountLimit     = 50
+    open static let cacheTotalCostLimit = 1024*1024
     
-    public static var showLogs = false
+    open static var showLogs = false
     
     /*
      *  Print logs if activated
      *  @param message: Message to log
      */
-    public static func log(message: String){
+    open static func log(_ message: String){
         if showLogs {
             print(message)
         }
@@ -29,8 +29,8 @@ public class AwesomeData: NSObject {
      *  Transforms URL to Hash
      *  @param url: Url to transform
      */
-    public static func hashUrl(url: String) -> String? {
-        let urlArray = url.componentsSeparatedByString("/")
+    open static func hashUrl(_ url: String) -> String? {
+        let urlArray = url.components(separatedBy: "/")
         if urlArray.count > 2 {
             return urlArray[2] + ":" + urlArray.last!
         }
@@ -41,14 +41,14 @@ public class AwesomeData: NSObject {
      *  Sets Database
      *  @param name: Name of the database
      */
-    public static func setDatabase(name: String){
+    open static func setDatabase(_ name: String){
         AwesomeDataAccess.sharedInstance.setDatabase(name)
     }
     
     /*
      *  Save Database Context
      */
-    public static func saveContext(){
+    open static func saveContext(){
         AwesomeDataAccess.sharedInstance.saveContext()
     }
     

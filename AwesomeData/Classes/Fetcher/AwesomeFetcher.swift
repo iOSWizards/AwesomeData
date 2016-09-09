@@ -15,7 +15,7 @@ public enum URLMethod: String {
     case PUT = "PUT"
 }
 
-public class AwesomeFetcher: NSObject {
+open class AwesomeFetcher: NSObject {
     // MARK:- Where the magic happens
     
     /*
@@ -26,29 +26,29 @@ public class AwesomeFetcher: NSObject {
     *   @param shouldCache: Cache fetched data, if on, it will check first for data in cache, then fetch if not found
     *   @param completion: Returns fetched NSData in a block
     */
-    public static func fetchData(urlString: String?, method: URLMethod? = .GET, bodyData: NSData? = nil, headerValues: [[String]]? = nil, shouldCache: Bool = false, completion:(data: NSData?) -> Void) -> NSURLSessionDataTask?{
+    open static func fetchData(_ urlString: String?, method: URLMethod? = .GET, bodyData: Data? = nil, headerValues: [[String]]? = nil, shouldCache: Bool = false, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask?{
         guard let urlString = urlString else {
-            completion(data: nil)
+            completion(nil)
             return nil
         }
         
         if urlString == "Optional(<null>)" {
-            completion(data: nil)
+            completion(nil)
             return nil
         }
         
-        guard let url = NSURL(string: urlString) else{
-            completion(data: nil)
+        guard let url = URL(string: urlString) else{
+            completion(nil)
             return nil
         }
         
-        let urlRequest = NSMutableURLRequest(URL: url)
+        let urlRequest = NSMutableURLRequest(url: url)
         //urlRequest.cachePolicy = .ReturnCacheDataElseLoad
         
         // check if file been cached already
         if shouldCache {
-            if let data = AwesomeCacheManager.getCachedObject(urlRequest) {
-                completion(data: data)
+            if let data = AwesomeCacheManager.getCachedObject(urlRequest as URLRequest) {
+                completion(data)
                 return nil
             }
         }
@@ -56,11 +56,11 @@ public class AwesomeFetcher: NSObject {
         // Continue to URL request
 
         if let method = method {
-            urlRequest.HTTPMethod = method.rawValue
+            urlRequest.httpMethod = method.rawValue
         }
         
         if let bodyData = bodyData {
-            urlRequest.HTTPBody = bodyData
+            urlRequest.httpBody = bodyData
         }
         
         if let headerValues = headerValues {
@@ -69,19 +69,19 @@ public class AwesomeFetcher: NSObject {
             }
         }
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(urlRequest, completionHandler: { (data, response, error) in
-            dispatch_async(dispatch_get_main_queue(), {
+        let task = URLSession.shared.dataTask(with: urlRequest as URLRequest) { (data, response, error) in
+            DispatchQueue.main.async(execute: {
                 if let error = error{
                     print("There was an error \(error)")
-                    completion(data: nil)
+                    completion(nil)
                 }else{
                     if shouldCache {
-                        AwesomeCacheManager.cacheObject(urlRequest, response: response, data: data)
+                        AwesomeCacheManager.cacheObject(urlRequest as URLRequest, response: response, data: data)
                     }
-                    completion(data: data)
+                    completion(data)
                 }
             })
-        })
+        }
         task.resume()
         
         return task
@@ -98,28 +98,28 @@ extension AwesomeFetcher {
      *   @param timeOut: Timeout time
      *   @param completion: Returns fetched NSData in a block
      */
-    public static func fetchData(urlString: String?, timeOut: Double, completion:(data: NSData?) -> Void){
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+    public static func fetchData(_ urlString: String?, timeOut: Double, completion:@escaping (_ data: Data?) -> Void){
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
             var canTimeOut = true
             var timedOut = false
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(timeOut * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(timeOut * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
                 if (canTimeOut) {
                     timedOut = true
-                    completion(data:nil)
+                    completion(nil)
                 }
             })
             
             fetchData(urlString, completion: { (data) in
                 canTimeOut = false;
                 
-                dispatch_async(dispatch_get_main_queue(), {
+                DispatchQueue.main.async(execute: {
                     if let data = data{
                         if !timedOut {
-                            completion(data:data)
+                            completion(data)
                         }
                     }else{
                         if(!timedOut){
-                            completion(data:nil)
+                            completion(nil)
                         }
                     }
                 })
@@ -133,9 +133,9 @@ extension AwesomeFetcher {
      *   @param body: adds body to request, can be of any kind
      *   @param completion: Returns fetched NSData in a block
      */
-    public static func fetchData(urlString: String?, body: String?, completion:(data: NSData?) -> Void) -> NSURLSessionDataTask?{
+    public static func fetchData(_ urlString: String?, body: String?, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask?{
         if let body = body {
-            return fetchData(urlString, method: nil, bodyData: body.dataUsingEncoding(NSUTF8StringEncoding), headerValues: nil, shouldCache: false, completion: completion)
+            return fetchData(urlString, method: nil, bodyData: body.data(using: String.Encoding.utf8), headerValues: nil, shouldCache: false, completion: completion)
         }
         return fetchData(urlString, method: nil, bodyData: nil, headerValues: nil, shouldCache: false, completion: completion)
     }
@@ -147,12 +147,12 @@ extension AwesomeFetcher {
      *   @param jsonBody: adds json (Dictionary) body to request
      *   @param completion: Returns fetched NSData in a block
      */
-    public static func fetchData(urlString: String?, method: URLMethod?, jsonBody: [String: AnyObject]?, completion:(data: NSData?) -> Void) -> NSURLSessionDataTask? {
-        var data: NSData?
+    public static func fetchData(_ urlString: String?, method: URLMethod?, jsonBody: [String: AnyObject]?, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask? {
+        var data: Data?
         var headerValues = [[String]]()
         if let jsonBody = jsonBody {
             do {
-                try data = NSJSONSerialization.dataWithJSONObject(jsonBody, options: .PrettyPrinted)
+                try data = JSONSerialization.data(withJSONObject: jsonBody, options: .prettyPrinted)
                 headerValues.append(["application/json", "Content-Type"])
                 headerValues.append(["application/json", "Accept"])
             } catch{
@@ -171,12 +171,12 @@ extension AwesomeFetcher {
      *   @param authorization: adds request Authorization token to header
      *   @param completion: Returns fetched NSData in a block
      */
-    public static func fetchData(urlString: String?, method: URLMethod? = .GET, jsonBody: [String: AnyObject]? = nil, authorization: String, completion:(data: NSData?) -> Void) -> NSURLSessionDataTask? {
-        var data: NSData?
+    public static func fetchData(_ urlString: String?, method: URLMethod? = .GET, jsonBody: [String: AnyObject]? = nil, authorization: String, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask? {
+        var data: Data?
         var headerValues = [[String]]()
         if let jsonBody = jsonBody {
             do {
-                try data = NSJSONSerialization.dataWithJSONObject(jsonBody, options: .PrettyPrinted)
+                try data = JSONSerialization.data(withJSONObject: jsonBody, options: .prettyPrinted)
                 headerValues.append(["application/json", "Content-Type"])
                 headerValues.append(["application/json", "Accept"])
             } catch{

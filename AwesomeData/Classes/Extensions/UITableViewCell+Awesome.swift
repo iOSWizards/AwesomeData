@@ -10,21 +10,21 @@ import UIKit
 
 extension UITableViewCell{
     
-    public func setImage(url: String?, thumbnailUrl: String? = nil, placeholder: UIImage? = nil, imageViewName: String, tableView: UITableView, indexPath: NSIndexPath, completion:((image: UIImage?) -> Void)?) -> NSURLSessionDataTask?{
+    public func setImage(_ url: String?, thumbnailUrl: String? = nil, placeholder: UIImage? = nil, imageViewName: String, tableView: UITableView, indexPath: IndexPath, completion:((_ image: UIImage?) -> Void)?) -> URLSessionDataTask?{
         
-        if let imageView = self.valueForKey(imageViewName) as? UIImageView {
+        if let imageView = self.value(forKey: imageViewName) as? UIImageView {
             return imageView.setImage(url, placeholder: placeholder) { (image) in
                 
-                if let updateCell = tableView.cellForRowAtIndexPath(indexPath) {
-                    if let imageView = updateCell.valueForKey(imageViewName) as? UIImageView {
+                if let updateCell = tableView.cellForRow(at: indexPath) {
+                    if let imageView = updateCell.value(forKey: imageViewName) as? UIImageView {
                         imageView.image = image
                     }
                 }
                 
-                completion?(image: image)
+                completion?(image)
             }
         } else {
-            completion?(image: nil)
+            completion?(nil)
         }
         
         return nil

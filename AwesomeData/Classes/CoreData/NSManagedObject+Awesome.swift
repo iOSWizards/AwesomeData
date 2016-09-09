@@ -31,8 +31,8 @@ extension NSManagedObject {
      *  @param managedContext: as default, will get the standard Coredata shared instance for the App
      */
     public static func newInstance(withContext managedContext: NSManagedObjectContext = AwesomeDataAccess.sharedInstance.managedObjectContext) -> NSManagedObject{
-        let entity =  NSEntityDescription.entityForName(String(self), inManagedObjectContext:managedContext)
-        return NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+        let entity =  NSEntityDescription.entity(forEntityName: String(describing: self), in:managedContext)
+        return NSManagedObject(entity: entity!, insertInto:managedContext)
     }
     
     /*
@@ -40,7 +40,7 @@ extension NSManagedObject {
      *  @param managedContext: context for wanted database | as default, will get the standard Coredata shared instance for the App
      */
     public func deleteInstance(withContext managedContext: NSManagedObjectContext = AwesomeDataAccess.sharedInstance.managedObjectContext){
-        managedContext.deleteObject(self)
+        managedContext.delete(self)
     }
     
     /*
@@ -49,7 +49,7 @@ extension NSManagedObject {
      *  @param sortDescriptor: NSSortDescriptor with sort params
      */
     public static func list(withContext managedContext: NSManagedObjectContext = AwesomeDataAccess.sharedInstance.managedObjectContext, sortDescriptor: NSSortDescriptor? = nil, predicate: NSPredicate? = nil) -> [NSManagedObject]{
-        let fetchRequest = NSFetchRequest(entityName:String(self))
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: self))
         
         if let sortDescriptor = sortDescriptor {
             fetchRequest.sortDescriptors = [sortDescriptor]
@@ -61,7 +61,7 @@ extension NSManagedObject {
         
         var fetchedResults: [NSManagedObject]!
         do {
-            try fetchedResults = managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            try fetchedResults = managedContext.fetch(fetchRequest) as! [NSManagedObject]
             
             if let results: [NSManagedObject] = fetchedResults {
                 return results
@@ -85,13 +85,13 @@ extension NSManagedObject {
         
         if let fetchedObjects = fetchedObjects {
             if fetchedObjects.count > 0{
-                if AwesomeData.showLogs { print("fetched \(fetchedObjects.count) \(String(self)) with predicate \(predicate)") }
+                if AwesomeData.showLogs { print("fetched \(fetchedObjects.count) \(String(describing: self)) with predicate \(predicate)") }
                 return fetchedObjects.first
             }
         }
         
         if createIfNil {
-            if AwesomeData.showLogs { print("creating new instance of \(String(self))") }
+            if AwesomeData.showLogs { print("creating new instance of \(String(describing: self))") }
             return newInstance(withContext: managedContext)
         }
         
@@ -115,10 +115,10 @@ extension NSManagedObject {
      *  @param property: Name of the property to sort data
      *  @param ascending: Sets either the sort is *true for ascending* or *false for descending*
      */
-    public static func sortArray(array:NSArray, sortWith property:String, ascending:Bool) -> NSArray{
+    public static func sortArray(_ array:NSArray, sortWith property:String, ascending:Bool) -> [Any]{
         let sortDescriptor = NSSortDescriptor(key:property, ascending:ascending)
         let sortDescriptors = [sortDescriptor]
-        return array.sortedArrayUsingDescriptors(sortDescriptors)
+        return array.sortedArray(using: sortDescriptors)
     }
 }
 
@@ -126,23 +126,23 @@ extension NSManagedObject {
 
 extension NSManagedObject {
     
-    public class func parseDouble(jsonObject: [String: AnyObject], key: String) -> NSNumber {
-        return NSNumber(double: AwesomeParser.doubleValue(jsonObject, key: key))
+    public class func parseDouble(_ jsonObject: [String: AnyObject], key: String) -> NSNumber {
+        return NSNumber(value: AwesomeParser.doubleValue(jsonObject, key: key) as Double)
     }
     
-    public class func parseInt(jsonObject: [String: AnyObject], key: String) -> NSNumber {
-        return NSNumber(integer: AwesomeParser.intValue(jsonObject, key: key))
+    public class func parseInt(_ jsonObject: [String: AnyObject], key: String) -> NSNumber {
+        return NSNumber(value: AwesomeParser.intValue(jsonObject, key: key) as Int)
     }
     
-    public class func parseBool(jsonObject: [String: AnyObject], key: String) -> NSNumber {
-        return NSNumber(bool: AwesomeParser.boolValue(jsonObject, key: key))
+    public class func parseBool(_ jsonObject: [String: AnyObject], key: String) -> NSNumber {
+        return NSNumber(value: AwesomeParser.boolValue(jsonObject, key: key) as Bool)
     }
     
-    public class func parseString(jsonObject: [String: AnyObject], key: String) -> String {
+    public class func parseString(_ jsonObject: [String: AnyObject], key: String) -> String {
         return AwesomeParser.stringValue(jsonObject, key: key)
     }
     
-    public class func parseDate(jsonObject: [String: AnyObject], key: String) -> NSDate? {
+    public class func parseDate(_ jsonObject: [String: AnyObject], key: String) -> Date? {
         return AwesomeParser.dateValue(jsonObject, key: key)
     }
     

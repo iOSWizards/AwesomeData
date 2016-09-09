@@ -10,13 +10,13 @@ import UIKit
 
 extension UIImage{
     
-    public static func loadImage(url: String?, completion:(image: UIImage?) -> Void) -> NSURLSessionDataTask?{
+    public static func loadImage(_ url: String?, completion:@escaping (_ image: UIImage?) -> Void) -> URLSessionDataTask?{
         if let url = url {
             let task = AwesomeFetcher.fetchData(url, shouldCache: true) { (data) in
                 if let data = data {
-                    completion(image: UIImage(data: data))
+                    completion(UIImage(data: data))
                 }else{
-                    completion(image: nil)
+                    completion(nil)
                 }
             }            
             return task

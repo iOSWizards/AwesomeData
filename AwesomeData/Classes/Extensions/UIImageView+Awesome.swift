@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImageView{
     
-    public func setImage(url: String?, thumbnailUrl: String? = nil, placeholder: UIImage? = nil, completion:((image: UIImage?) -> Void)?) -> NSURLSessionDataTask?{
+    public func setImage(_ url: String?, thumbnailUrl: String? = nil, placeholder: UIImage? = nil, completion:((_ image: UIImage?) -> Void)?) -> URLSessionDataTask?{
         self.layer.masksToBounds = true
         
         if let placeholder = placeholder {
@@ -19,7 +19,7 @@ extension UIImageView{
         
         return UIImage.loadImage(url) { (image) in
             self.image = image
-            completion?(image: image)
+            completion?(image)
         }
     }
     
