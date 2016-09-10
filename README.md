@@ -1,5 +1,5 @@
 # AwesomeData
- 
+
 <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat" alt="Swift" /></a>
 <a href="https://tldrlegal.com/license/mit-license"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat" alt="License" /></a>
 [![Version](https://img.shields.io/cocoapods/v/AwesomeData.svg?style=flat)](http://cocoapods.org/pods/AwesomeData)
@@ -16,6 +16,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+iOS 8 or Higher
+Swift-3
+
 ## Installation
 
 AwesomeData is available through [CocoaPods](http://cocoapods.org). To install
@@ -31,13 +34,14 @@ Evandro Hoffmann, evandro@itsdayoff.com
 
 ## Contributor
 
-Leonardo Ferreira, leonardo.kaminski.ferreira@gmail.com
+Leonardo Kaminski Ferreira, leonardo.kaminski.ferreira@gmail.com
 
 ## License
 
 AwesomeData is available under the MIT license. See the LICENSE file for more info.
 
 ## Removing Coredata code from AppDelegate
+
 Coredata code should never belong to AppDelegate file, so with the AwesomeData, you can have it from an external source.
 
 ## How to Use:
