@@ -115,11 +115,38 @@ extension NSManagedObject {
      *  @param property: Name of the property to sort data
      *  @param ascending: Sets either the sort is *true for ascending* or *false for descending*
      */
-    public static func sortArray(_ array:NSArray, sortWith property:String, ascending:Bool) -> [Any]{
+    public static func sort(nsArray array:NSArray, sortWith property:String, ascending:Bool) -> [Any]{
         let sortDescriptor = NSSortDescriptor(key:property, ascending:ascending)
         let sortDescriptors = [sortDescriptor]
         return array.sortedArray(using: sortDescriptors)
     }
+    
+    /*
+     *  Sorts an Array with NSManagedObjects based on property
+     *  @param array: array of NSManagedObjects
+     *  @param property: Name of the property to sort data
+     *  @param ascending: Sets either the sort is *true for ascending* or *false for descending*
+     */
+    public static func sort(array array:[NSManagedObject], sortWith property:String, ascending:Bool) -> [Any]{
+        return sort(nsArray: array as NSArray, sortWith: property, ascending: ascending)
+    }
+    
+    /*
+     *  Sorts a Set with NSManagedObjects based on property
+     *  @param set: set of NSManagedObjects
+     *  @param property: Name of the property to sort data
+     *  @param ascending: Sets either the sort is *true for ascending* or *false for descending*
+     */
+    public static func sort(set set: Set<NSManagedObject>, sortWith property:String, ascending:Bool) -> [Any]{
+        var array = [NSManagedObject]()
+        for object in set {
+            array.append(object)
+        }
+        
+        return sort(nsArray: array as NSArray, sortWith: property, ascending: ascending)
+    }
+    
+    
 }
 
 // MARK: - Json parsing
