@@ -169,8 +169,8 @@ extension NSManagedObject {
         return AwesomeParser.stringValue(jsonObject, key: key)
     }
     
-    public class func parseDate(_ jsonObject: [String: AnyObject], key: String) -> Date? {
-        return AwesomeParser.dateValue(jsonObject, key: key)
+    public class func parseDate(_ jsonObject: [String: AnyObject], key: String, format: String = "yyyy-MM-dd'T'HH:mm:ss.SSSZ") -> Date? {
+        return AwesomeParser.dateValue(jsonObject, key: key, format: format)
     }
     
 }

@@ -70,11 +70,11 @@ open class AwesomeParser: NSObject {
         return ""
     }
     
-    open static func dateValue(_ jsonObject: [String: Any], key: String) -> Date?{
+    open static func dateValue(_ jsonObject: [String: Any], key: String, format: String = "yyyy-MM-dd'T'HH:mm:ss.SSSZ") -> Date?{
         let dateString = stringValue(jsonObject, key: key)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.dateFormat = format
         return dateFormatter.date(from: dateString)
     }
     
