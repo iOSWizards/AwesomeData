@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AwesomeData'
-  s.version          = '0.1.8'
+  s.version          = '0.1.9'
   s.summary          = 'Handling Coredata has been made easy.'
 
 # This description is used to generate tags and improve search results.
@@ -39,4 +39,6 @@ Fetch data from URLs, parse JSON and save to Coredata easily.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+    s.dependency 'ReachabilitySwift', '~> 3'
 end

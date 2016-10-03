@@ -6,6 +6,5 @@ target 'AwesomeData_Example' do
   target 'AwesomeData_Tests' do
     inherit! :search_paths
 
-    
   end
 end

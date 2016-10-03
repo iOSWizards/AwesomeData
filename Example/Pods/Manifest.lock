@@ -1,5 +1,7 @@
 PODS:
-  - AwesomeData (0.1.0)
+  - AwesomeData (0.1.9):
+    - ReachabilitySwift (~> 3)
+  - ReachabilitySwift (3)
 
 DEPENDENCIES:
   - AwesomeData (from `../`)
@@ -9,8 +11,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AwesomeData: 7c72454f4252d629191394e28619ca90e01f14db
+  AwesomeData: ab28a033a4796e9c512ecd6bf8e7793c2fb314d9
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
 
-PODFILE CHECKSUM: 6a6047a52dbf194597a1926e9d111bf7a2cfb476
+PODFILE CHECKSUM: 9453e0358d9db6944be236c5dc49374e1d0e57c6
 
 COCOAPODS: 1.0.1
