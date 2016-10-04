@@ -27,9 +27,9 @@ open class AwesomeParser: NSObject {
         if let value = jsonObject[key] as? Double {
             return value
         }else if let value = jsonObject[key] as? String {
-            return Double(value)!
+            return Double(value.trimmed)!
         }else if let array = jsonObject[key] as? [String] {
-            return Double(array[0])!
+            return Double(array[0].trimmed)!
         }
         return 0
     }
@@ -38,9 +38,9 @@ open class AwesomeParser: NSObject {
         if let value = jsonObject[key] as? Int {
             return value
         }else if let value = jsonObject[key] as? String {
-            return Int(value)!
+            return Int(value.trimmed)!
         }else if let array = jsonObject[key] as? [String] {
-            return Int(array[0])!
+            return Int(array[0].trimmed)!
         }
         return 0
     }
@@ -49,9 +49,9 @@ open class AwesomeParser: NSObject {
         if let value = jsonObject[key] as? Bool {
             return value
         }else if let value = jsonObject[key] as? String {
-            return value.toBool()!
+            return value.trimmed.toBool()!
         }else if let array = jsonObject[key] as? [String] {
-            return array[0].toBool()!
+            return array[0].trimmed.toBool()!
         }
         return false
     }
@@ -104,5 +104,9 @@ extension String {
             return ""
         }
         return self
+    }
+    
+    var trimmed: String{
+        return self.replacingOccurrences(of: " ", with: "")
     }
 }
