@@ -26,7 +26,7 @@ open class AwesomeFetcher: NSObject {
     *   @param shouldCache: Cache fetched data, if on, it will check first for data in cache, then fetch if not found
     *   @param completion: Returns fetched NSData in a block
     */
-    open static func fetchData(_ urlString: String?, method: URLMethod? = .GET, bodyData: Data? = nil, headerValues: [[String]]? = nil, shouldCache: Bool = false, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask?{
+    open static func fetchData(_ urlString: String?, method: URLMethod? = .GET, bodyData: Data? = nil, headerValues: [[String]]? = nil, shouldCache: Bool = false, timeoutAfter timeout: Int = 0, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask?{
         guard let urlString = urlString else {
             completion(nil)
             return nil
@@ -69,20 +69,33 @@ open class AwesomeFetcher: NSObject {
             }
         }
         
+        var cantimeout = true
+        
         let task = URLSession.shared.dataTask(with: urlRequest as URLRequest) { (data, response, error) in
             DispatchQueue.main.async(execute: {
                 if let error = error{
                     print("There was an error \(error)")
+                    cantimeout = false
                     completion(nil)
                 }else{
                     if shouldCache {
                         AwesomeCacheManager.cacheObject(urlRequest as URLRequest, response: response, data: data)
                     }
+                    cantimeout = false
                     completion(data)
                 }
             })
         }
         task.resume()
+        
+        if timeout > 0 {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: UInt64(timeout))) {
+                if cantimeout {
+                    completion(nil)
+                    task.cancel()
+                }
+            }
+        }
         
         return task
     }
@@ -98,7 +111,7 @@ extension AwesomeFetcher {
      *   @param timeOut: Timeout time
      *   @param completion: Returns fetched NSData in a block
      */
-    public static func fetchData(_ urlString: String?, timeOut: Double, completion:@escaping (_ data: Data?) -> Void){
+    public static func fetchData(_ urlString: String?, timeOut: Double, timeoutAfter timeout: Int = 0, completion:@escaping (_ data: Data?) -> Void){
         DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
             var canTimeOut = true
             var timedOut = false
@@ -109,7 +122,7 @@ extension AwesomeFetcher {
                 }
             })
             
-            fetchData(urlString, completion: { (data) in
+            fetchData(urlString, timeoutAfter: timeout, completion: { (data) in
                 canTimeOut = false;
                 
                 DispatchQueue.main.async(execute: {
@@ -133,11 +146,11 @@ extension AwesomeFetcher {
      *   @param body: adds body to request, can be of any kind
      *   @param completion: Returns fetched NSData in a block
      */
-    public static func fetchData(_ urlString: String?, body: String?, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask?{
+    public static func fetchData(_ urlString: String?, body: String?, timeoutAfter timeout: Int = 0, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask?{
         if let body = body {
-            return fetchData(urlString, method: nil, bodyData: body.data(using: String.Encoding.utf8), headerValues: nil, shouldCache: false, completion: completion)
+            return fetchData(urlString, method: nil, bodyData: body.data(using: String.Encoding.utf8), headerValues: nil, shouldCache: false, timeoutAfter: timeout, completion: completion)
         }
-        return fetchData(urlString, method: nil, bodyData: nil, headerValues: nil, shouldCache: false, completion: completion)
+        return fetchData(urlString, method: nil, bodyData: nil, headerValues: nil, shouldCache: false, timeoutAfter: timeout, completion: completion)
     }
     
     /*
@@ -147,7 +160,7 @@ extension AwesomeFetcher {
      *   @param jsonBody: adds json (Dictionary) body to request
      *   @param completion: Returns fetched NSData in a block
      */
-    public static func fetchData(_ urlString: String?, method: URLMethod?, jsonBody: [String: AnyObject]?, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask? {
+    public static func fetchData(_ urlString: String?, method: URLMethod?, jsonBody: [String: AnyObject]?, timeoutAfter timeout: Int = 0, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask? {
         var data: Data?
         var headerValues = [[String]]()
         if let jsonBody = jsonBody {
@@ -160,7 +173,7 @@ extension AwesomeFetcher {
             }
         }
         
-        return fetchData(urlString, method: method, bodyData: data, headerValues: headerValues, shouldCache: false, completion: completion)
+        return fetchData(urlString, method: method, bodyData: data, headerValues: headerValues, shouldCache: false, timeoutAfter: timeout, completion: completion)
     }
     
     /*
@@ -171,7 +184,7 @@ extension AwesomeFetcher {
      *   @param authorization: adds request Authorization token to header
      *   @param completion: Returns fetched NSData in a block
      */
-    public static func fetchData(_ urlString: String?, method: URLMethod? = .GET, jsonBody: [String: AnyObject]? = nil, authorization: String, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask? {
+    public static func fetchData(_ urlString: String?, method: URLMethod? = .GET, jsonBody: [String: AnyObject]? = nil, authorization: String, timeoutAfter timeout: Int = 0, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask? {
         var data: Data?
         var headerValues = [[String]]()
         if let jsonBody = jsonBody {
@@ -186,7 +199,7 @@ extension AwesomeFetcher {
         
         headerValues.append([authorization, "Authorization"])
         
-        return fetchData(urlString, method: method, bodyData: data, headerValues: headerValues, shouldCache: false, completion: completion)
+        return fetchData(urlString, method: method, bodyData: data, headerValues: headerValues, shouldCache: false, timeoutAfter: timeout, completion: completion)
     }
     
 }
