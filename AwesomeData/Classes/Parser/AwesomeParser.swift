@@ -27,9 +27,9 @@ open class AwesomeParser: NSObject {
         if let value = jsonObject[key] as? Double {
             return value
         }else if let value = jsonObject[key] as? String {
-            return Double(value.trimmed)!
+            return Double(value.trimmed) ?? 0
         }else if let array = jsonObject[key] as? [String] {
-            return Double(array[0].trimmed)!
+            return Double(array[0].trimmed) ?? 0
         }
         return 0
     }
@@ -38,9 +38,9 @@ open class AwesomeParser: NSObject {
         if let value = jsonObject[key] as? Int {
             return value
         }else if let value = jsonObject[key] as? String {
-            return Int(value.trimmed)!
+            return Int(value.trimmed) ?? 0
         }else if let array = jsonObject[key] as? [String] {
-            return Int(array[0].trimmed)!
+            return Int(array[0].trimmed) ?? 0
         }
         return 0
     }
@@ -49,9 +49,9 @@ open class AwesomeParser: NSObject {
         if let value = jsonObject[key] as? Bool {
             return value
         }else if let value = jsonObject[key] as? String {
-            return value.trimmed.toBool()!
+            return value.trimmed.toBool() ?? false
         }else if let array = jsonObject[key] as? [String] {
-            return array[0].trimmed.toBool()!
+            return array[0].trimmed.toBool() ?? false
         }
         return false
     }
