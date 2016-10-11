@@ -127,7 +127,7 @@ extension NSManagedObject {
      *  @param property: Name of the property to sort data
      *  @param ascending: Sets either the sort is *true for ascending* or *false for descending*
      */
-    public static func sort(array array:[NSManagedObject], sortWith property:String, ascending:Bool) -> [Any]{
+    public static func sort(setArray array:[NSManagedObject], sortWith property:String, ascending:Bool) -> [Any]{
         return sort(nsArray: array as NSArray, sortWith: property, ascending: ascending)
     }
     
@@ -137,7 +137,7 @@ extension NSManagedObject {
      *  @param property: Name of the property to sort data
      *  @param ascending: Sets either the sort is *true for ascending* or *false for descending*
      */
-    public static func sort(set set: Set<NSManagedObject>, sortWith property:String, ascending:Bool) -> [Any]{
+    public static func sort(setSet set: Set<NSManagedObject>, sortWith property:String, ascending:Bool) -> [Any]{
         var array = [NSManagedObject]()
         for object in set {
             array.append(object)
