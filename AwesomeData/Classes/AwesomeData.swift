@@ -41,8 +41,12 @@ open class AwesomeData: NSObject {
      *  Sets Database
      *  @param name: Name of the database
      */
-    open static func setDatabase(_ name: String){
+    open static func setDatabase(_ name: String, options: [String: Any]? = nil){
         AwesomeDataAccess.sharedInstance.setDatabase(name)
+        
+        if let options = options {
+            AwesomeDataAccess.sharedInstance.databaseOptions = options
+        }
     }
     
     /*
