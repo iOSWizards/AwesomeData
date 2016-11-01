@@ -37,7 +37,7 @@ open class AwesomeDataAccess: NSObject {
     
     // MARK: - Local Core Data stack
     
-    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+    open lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.appendingPathComponent("SingleViewCoreData.sqlite")
         var failureReason = "There was an error creating or loading the application's saved data."
