@@ -24,6 +24,8 @@ public extension UIImageView {
     public func setImage(_ url: String?, thumbnailUrl: String? = nil, placeholder: UIImage? = nil, completion:((_ image: UIImage?) -> Void)?) -> URLSessionDataTask?{
         self.layer.masksToBounds = true
         
+        self.image = nil
+        
         if let placeholder = placeholder {
             self.image = placeholder
         }
