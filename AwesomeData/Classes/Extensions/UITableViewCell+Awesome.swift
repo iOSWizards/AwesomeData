@@ -15,12 +15,6 @@ extension UITableViewCell{
         if let imageView = self.value(forKey: imageViewName) as? UIImageView {
             return imageView.setImage(url, placeholder: placeholder) { (image) in
                 
-                if let updateCell = tableView.cellForRow(at: indexPath) {
-                    if let imageView = updateCell.value(forKey: imageViewName) as? UIImageView {
-                        imageView.image = image
-                    }
-                }
-                
                 completion?(image)
             }
         } else {
