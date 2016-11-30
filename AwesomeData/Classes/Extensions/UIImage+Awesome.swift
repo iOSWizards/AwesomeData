@@ -12,7 +12,7 @@ extension UIImage{
     
     public static func loadImage(_ url: String?, completion:@escaping (_ image: UIImage?) -> Void) -> URLSessionDataTask?{
         if let url = url {
-            let task = AwesomeFetcher.fetchData(url, shouldCache: true) { (data) in
+            let task = AwesomeRequester.performRequest(url, shouldCache: true) { (data) in
                 if let data = data {
                     completion(UIImage(data: data))
                 }else{
