@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AwesomeData'
-  s.version          = '0.2.6'
+  s.version          = '0.2.7'
   s.summary          = 'Handling Coredata has been made easy.'
 
 # This description is used to generate tags and improve search results.

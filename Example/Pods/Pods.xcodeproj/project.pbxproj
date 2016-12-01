@@ -21,7 +21,7 @@
 		7EFA1134AD15A277F217E7E2DC0F00C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C92513381F8C0936D0DBDE37BC11C /* Foundation.framework */; };
 		828109FD2EDD462F28AA5C20C60153DE /* UIButton+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B67F8F7288289C0535ACF945897069 /* UIButton+Awesome.swift */; };
 		8BFE1E18314F328F76500B8A55579078 /* Pods-AwesomeData_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E03C7537D4025B4C535D8D07508E96 /* Pods-AwesomeData_Tests-dummy.m */; };
-		91D10CACDAC88837321F16EEC5104230 /* AwesomeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40844BC846AAC461F2275FDE8C0EDB /* AwesomeFetcher.swift */; };
+		91D10CACDAC88837321F16EEC5104230 /* AwesomeRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40844BC846AAC461F2275FDE8C0EDB /* AwesomeRequester.swift */; };
 		92F4C19475A90C858E5DB5B1243DCDF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C92513381F8C0936D0DBDE37BC11C /* Foundation.framework */; };
 		9A4DB5C9741D4F81781C47DA02B1D951 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C92513381F8C0936D0DBDE37BC11C /* Foundation.framework */; };
 		9CB86284C003D50488E724DF927B51FF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B0931E22F1F20CC87CC8361F96E24 /* SystemConfiguration.framework */; };
@@ -80,7 +80,7 @@
 		2EB4D0692066B8661707D9B9625B20FA /* UICollectionViewCell+Awesome.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Awesome.swift"; sourceTree = "<group>"; };
 		2FC2BDBA1134CB0D08BF39EDB37C0973 /* Pods-AwesomeData_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AwesomeData_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		33D79E322A05ED856F1479A602D1371A /* AwesomeData.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AwesomeData.modulemap; sourceTree = "<group>"; };
-		3A40844BC846AAC461F2275FDE8C0EDB /* AwesomeFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AwesomeFetcher.swift; sourceTree = "<group>"; };
+		3A40844BC846AAC461F2275FDE8C0EDB /* AwesomeRequester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AwesomeRequester.swift; sourceTree = "<group>"; };
 		43363382F9BE5F54F44C51C2F3E4C3E3 /* Pods-AwesomeData_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AwesomeData_Example-dummy.m"; sourceTree = "<group>"; };
 		528BD674C3CF48ED49B951B6973636FC /* Pods_AwesomeData_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AwesomeData_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B67F8F7288289C0535ACF945897069 /* UIButton+Awesome.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIButton+Awesome.swift"; sourceTree = "<group>"; };
@@ -348,7 +348,7 @@
 		AB1BDA1E65BAF866C3CC7597C4FB14CE /* Fetcher */ = {
 			isa = PBXGroup;
 			children = (
-				3A40844BC846AAC461F2275FDE8C0EDB /* AwesomeFetcher.swift */,
+				3A40844BC846AAC461F2275FDE8C0EDB /* AwesomeRequester.swift */,
 			);
 			path = Fetcher;
 			sourceTree = "<group>";
@@ -525,7 +525,7 @@
 				1BA4A5E7921942C5D457F1AE019699A0 /* AwesomeData-dummy.m in Sources */,
 				453A96D2719FBB829E2091F0A60E03A8 /* AwesomeData.swift in Sources */,
 				0A81E29D1773DD57DE7C3FEBF0D01BC6 /* AwesomeDataAccess.swift in Sources */,
-				91D10CACDAC88837321F16EEC5104230 /* AwesomeFetcher.swift in Sources */,
+				91D10CACDAC88837321F16EEC5104230 /* AwesomeRequester.swift in Sources */,
 				75E699FDA7DD94B94FFA511375556FAC /* AwesomeParser.swift in Sources */,
 				0938BFFB17F00225E53E95A5CD99E972 /* Extensions.swift in Sources */,
 				343093872DAEDEBB2D64AADBFADE29BC /* NSManagedObject+Awesome.swift in Sources */,
