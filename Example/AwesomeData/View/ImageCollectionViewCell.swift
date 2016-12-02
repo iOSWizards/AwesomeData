@@ -12,4 +12,10 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var pictureImageView: UIImageView!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        pictureImageView.addPlaceholderImage(named: "placeholder")
+    }
+    
 }
