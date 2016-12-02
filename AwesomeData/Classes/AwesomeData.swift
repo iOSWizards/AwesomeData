@@ -9,9 +9,6 @@
 import UIKit
 
 open class AwesomeData: NSObject {
-
-    open static let cacheCountLimit     = 50
-    open static let cacheTotalCostLimit = 1024*1024
     
     open static var showLogs = false
     

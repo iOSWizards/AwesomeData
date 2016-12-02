@@ -72,7 +72,11 @@ public extension UIImageView {
         
         return UIImage.loadImage(url) { (image) in
             if(initialIndexPath == self.indexPath) {
+                self.alpha = 0.2
                 self.image = image
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.alpha = 1.0
+                })
                 completion?(image)
             } else {
                 return
