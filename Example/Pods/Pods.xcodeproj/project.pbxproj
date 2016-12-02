@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0938BFFB17F00225E53E95A5CD99E972 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2BBAC258E6E55811EE1B8FD81DFF1A /* Extensions.swift */; };
 		0A81E29D1773DD57DE7C3FEBF0D01BC6 /* AwesomeDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C903E47A19788EA58655BC2B4E2B8C /* AwesomeDataAccess.swift */; };
+		0A858EC21DF14D72008F1F54 /* AwesomeBackgroundPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A858EC11DF14D72008F1F54 /* AwesomeBackgroundPlaceholder.swift */; };
 		0F0CC21462A6BF02BEBEE0FE9C1CFE6F /* UITableViewCell+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723BAB16CA64B79740CEBF608072D0DB /* UITableViewCell+Awesome.swift */; };
 		181E2B79A58D4C318DD09736AB4ABE5C /* ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B0173D02276968EB9711C6BF944032E /* ReachabilitySwift-dummy.m */; };
 		1BA4A5E7921942C5D457F1AE019699A0 /* AwesomeData-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 618F425ECA20C84D3E7EE5C35D8889C2 /* AwesomeData-dummy.m */; };
@@ -65,6 +66,7 @@
 		038E318D0901FF9D7BF8739741CAA26D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05CDFE64C6896FF9F4B8F27B0BA00A22 /* AwesomeCacheManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AwesomeCacheManager.swift; sourceTree = "<group>"; };
 		099DCCC47F37BB6DC929708D7DD70E6B /* Pods-AwesomeData_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AwesomeData_Tests-umbrella.h"; sourceTree = "<group>"; };
+		0A858EC11DF14D72008F1F54 /* AwesomeBackgroundPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeBackgroundPlaceholder.swift; sourceTree = "<group>"; };
 		0EACB737DA04456F9962C415A2A40169 /* Pods-AwesomeData_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AwesomeData_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1362ADF1917356CD03AB7963AE1F6988 /* AwesomeParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AwesomeParser.swift; sourceTree = "<group>"; };
 		1A13EFACD9CE638ECD0970BA782AC582 /* Pods-AwesomeData_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeData_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -170,6 +172,14 @@
 			);
 			name = "Pods-AwesomeData_Example";
 			path = "Target Support Files/Pods-AwesomeData_Example";
+			sourceTree = "<group>";
+		};
+		0A858EC01DF14D4F008F1F54 /* Placeholder */ = {
+			isa = PBXGroup;
+			children = (
+				0A858EC11DF14D72008F1F54 /* AwesomeBackgroundPlaceholder.swift */,
+			);
+			path = Placeholder;
 			sourceTree = "<group>";
 		};
 		23D957A18E39051E3C576E7521B8012B /* Frameworks */ = {
@@ -290,6 +300,7 @@
 				AB1BDA1E65BAF866C3CC7597C4FB14CE /* Fetcher */,
 				589A3A932270192C1475212481F2F0A4 /* Formatting */,
 				C21C3CE0F4F69A561688B774424BA141 /* Parser */,
+				0A858EC01DF14D4F008F1F54 /* Placeholder */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -534,6 +545,7 @@
 				CEEA21AF34639BB65576458EED2C5A75 /* UIImage+Awesome.swift in Sources */,
 				DE9402B82CFD5CB5BCFC3C5632130A20 /* UIImageView+Awesome.swift in Sources */,
 				0F0CC21462A6BF02BEBEE0FE9C1CFE6F /* UITableViewCell+Awesome.swift in Sources */,
+				0A858EC21DF14D72008F1F54 /* AwesomeBackgroundPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
