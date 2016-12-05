@@ -8,7 +8,7 @@
 ### Continuous integration - branch master
 [![CI Status Master](https://travis-ci.org/iOSWizards/AwesomeData.svg?branch=master)](https://travis-ci.org/iOSWizards/AwesomeData)
 ### Continuous integration - branch develop
-[![CI Status](https://travis-ci.org/iOSWizards/AwesomeData.svg?branch=0.2.8)](https://travis-ci.org/iOSWizards/AwesomeData)
+[![CI Status](https://travis-ci.org/iOSWizards/AwesomeData.svg?branch=0.2.9)](https://travis-ci.org/iOSWizards/AwesomeData)
 
 ## Example
 
