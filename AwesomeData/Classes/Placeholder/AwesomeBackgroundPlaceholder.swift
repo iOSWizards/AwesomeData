@@ -24,8 +24,7 @@ extension UIView {
         imageView.contentMode = contentMode
         imageView.layer.cornerRadius = self.layer.cornerRadius
         imageView.layer.masksToBounds = true
-        self.superview?.addSubview(imageView)
-        self.superview?.bringSubview(toFront: self)
+        self.superview?.insertSubview(imageView, belowSubview: self)
         
         if #available(iOS 9.0, *) {
             imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
