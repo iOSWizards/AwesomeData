@@ -8,7 +8,7 @@
 ### Continuous integration - branch master
 [![CI Status Master](https://travis-ci.org/iOSWizards/AwesomeData.svg?branch=master)](https://travis-ci.org/iOSWizards/AwesomeData)
 ### Continuous integration - branch develop
-[![CI Status](https://travis-ci.org/iOSWizards/AwesomeData.svg?branch=0.2.9)](https://travis-ci.org/iOSWizards/AwesomeData)
+[![CI Status](https://travis-ci.org/iOSWizards/AwesomeData.svg?branch=0.3.1)](https://travis-ci.org/iOSWizards/AwesomeData)
 
 ## Example
 
@@ -25,7 +25,7 @@ AwesomeData is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "AwesomeData", git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.3.0'
+pod "AwesomeData", git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.3.1'
 ```
 
 ## Author

@@ -10,10 +10,10 @@ import UIKit
 
 extension UICollectionViewCell{
     
-    public func setImage(_ url: String?, thumbnailUrl: String? = nil, placeholder: UIImage? = nil, imageViewName: String, collectionView: UICollectionView, indexPath: IndexPath, completion:((_ image: UIImage?) -> Void)?) -> URLSessionDataTask?{
+    public func setImage(_ url: String?, thumbnailUrl: String? = nil, placeholder: UIImage? = nil, imageViewName: String, animated: Bool, completion:((_ image: UIImage?) -> Void)?) -> URLSessionDataTask?{
         
         if let imageView = self.value(forKey: imageViewName) as? UIImageView {
-            return imageView.setImage(url, placeholder: placeholder) { (image) in
+            return imageView.setImage(url, placeholder: placeholder, animated: animated) { (image) in
                 
                 completion?(image)
             }
