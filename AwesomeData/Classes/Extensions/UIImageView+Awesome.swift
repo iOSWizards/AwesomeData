@@ -21,7 +21,7 @@ public extension UIImageView {
         }
     }
     
-    public func setImage(_ url: String?, thumbnailUrl: String? = nil, placeholder: UIImage? = nil, completion:((_ image: UIImage?) -> Void)?) -> URLSessionDataTask?{
+    public func setImage(_ url: String?, thumbnailUrl: String? = nil, placeholder: UIImage? = nil, animated: Bool, completion:((_ image: UIImage?) -> Void)?) -> URLSessionDataTask?{
         self.layer.masksToBounds = true
         
         self.image = nil
@@ -72,11 +72,13 @@ public extension UIImageView {
         
         return UIImage.loadImage(url) { (image) in
             if(initialIndexPath == self.indexPath) {
-                self.alpha = 0.2
                 self.image = image
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.alpha = 1.0
-                })
+                if(animated) {
+                    self.alpha = 0.2
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.alpha = 1.0
+                    })
+                }
                 completion?(image)
             } else {
                 return
