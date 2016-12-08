@@ -38,11 +38,13 @@ extension AwesomeDataDemoViewController: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "image", for: indexPath) as! ImageCollectionViewCell
         
+        return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         _ = cell.setImage(unsplashImages[(indexPath as NSIndexPath).row].imageUrl(CGSize(width: cellSize, height: cellSize)), imageViewName: "pictureImageView", animated: true, completion: { (image) in
             
         })
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
