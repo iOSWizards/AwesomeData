@@ -8,16 +8,16 @@
 
 import UIKit
 
-private var indexPathAssociationKey: UInt8 = 0
+private var loadedUrlAssociationKey: String = ""
 
 public extension UIImageView {
     
-    final internal var indexPath: Int! {
+    final internal var loadedUrl: String! {
         get {
-            return objc_getAssociatedObject(self, &indexPathAssociationKey) as? Int
+            return objc_getAssociatedObject(self, &loadedUrlAssociationKey) as? String
         }
         set {
-            objc_setAssociatedObject(self, &indexPathAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &loadedUrlAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
@@ -30,48 +30,14 @@ public extension UIImageView {
             self.image = placeholder
         }
         
-        self.indexPath = -1
+        self.loadedUrl = ""
         
-        let tableView: UITableView
-        let collectionView: UICollectionView
-        var tableViewCell: UITableViewCell?
-        var collectionViewCell: UICollectionViewCell?
-        var parentView = self.superview
+        self.loadedUrl = url
         
-        while parentView != nil {
-            if let view = parentView as? UITableViewCell {
-                tableViewCell = view
-            }
-            else if let view = parentView as? UITableView {
-                tableView = view
-                
-                if let cell = tableViewCell {
-                    let indexPath = tableView.indexPathForRow(at: cell.center)
-                    self.indexPath = indexPath?.hashValue ?? -1
-                }
-                break
-            }
-            else if let view = parentView as? UICollectionViewCell {
-                collectionViewCell = view
-            }
-            else if let view = parentView as? UICollectionView {
-                collectionView = view
-                
-                if let cell = collectionViewCell {
-                    let indexPath = collectionView.indexPathForItem(at: cell.center)
-                    self.indexPath = indexPath?.hashValue ?? -1
-                }
-                break
-            }
-            
-            parentView = parentView?.superview
-        }
-        
-        let initialIndexPath = self.indexPath as Int
-        
+        let initialLoadedUrl = self.loadedUrl as String
         
         return UIImage.loadImage(url) { (image) in
-            if(initialIndexPath == self.indexPath) {
+            if(initialLoadedUrl == self.loadedUrl) {
                 self.image = image
                 if(animated) {
                     self.alpha = 0.2
