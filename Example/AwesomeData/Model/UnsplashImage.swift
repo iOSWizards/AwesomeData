@@ -25,6 +25,10 @@ extension UnsplashImage {
 
 class UnsplashImage: NSManagedObject {
     
+    static var sortedList: [UnsplashImage] {
+        return list(sortWith: "objectId", ascending: true) as! [UnsplashImage]
+    }
+    
     func imageUrl(_ size: CGSize = CGSize(width: 0, height: 0)) -> String {
         guard let objectId = objectId else{
             return ""

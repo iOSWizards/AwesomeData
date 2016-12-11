@@ -16,7 +16,7 @@ class AwesomeDataDemoViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        unsplashImages = UnsplashImage.list() as! [UnsplashImage]
+        unsplashImages = UnsplashImage.sortedList
         AwesomeDataDemoAPI.fetchUnsplashImages({ (unsplashImages) in
             self.unsplashImages.removeAll()
             self.unsplashImages.append(contentsOf: unsplashImages)
