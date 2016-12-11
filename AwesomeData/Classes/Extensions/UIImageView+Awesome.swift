@@ -32,6 +32,10 @@ public extension UIImageView {
         
         self.loadedUrl = ""
         
+        guard let url = url else {
+            return nil
+        }
+        
         self.loadedUrl = url
         
         let initialLoadedUrl = self.loadedUrl as String
