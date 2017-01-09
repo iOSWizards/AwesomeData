@@ -58,12 +58,6 @@ public extension UIImageView {
         UIImage.loadImage(thumbnailUrl) { (image) in
             if(initialLoadedUrl == self.loadedUrl && !self.alreadyLoadedOriginaImage) {
                 self.image = image
-                if(animated) {
-                    self.alpha = 0.2
-                    UIView.animate(withDuration: 0.2, animations: {
-                        self.alpha = 1.0
-                    })
-                }
             } else {
                 return
             }
