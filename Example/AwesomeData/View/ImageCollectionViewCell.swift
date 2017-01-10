@@ -15,7 +15,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        pictureImageView.addPlaceholderImage(named: "placeholder")
     }
     
 }

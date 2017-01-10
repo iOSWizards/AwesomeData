@@ -22,7 +22,7 @@ public extension UIImageView {
         }
     }
     
-    final internal var alreadyLoadedOriginaImage: Bool! {
+    final internal var alreadyLoadedOriginalImage: Bool! {
         get {
             return objc_getAssociatedObject(self, &alreadyLoadedOriginalImageAssociationKey) as? Bool
         }
@@ -41,7 +41,7 @@ public extension UIImageView {
         }
         
         self.loadedUrl = ""
-        self.alreadyLoadedOriginaImage = false
+        self.alreadyLoadedOriginalImage = false
         
         guard let url = url else {
             return nil
@@ -56,8 +56,14 @@ public extension UIImageView {
         
         
         UIImage.loadImage(thumbnailUrl) { (image) in
-            if(initialLoadedUrl == self.loadedUrl && !self.alreadyLoadedOriginaImage) {
+            if(initialLoadedUrl == self.loadedUrl && !self.alreadyLoadedOriginalImage) {
                 self.image = image
+                if(animated) {
+                    self.alpha = 0.2
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self.alpha = 1.0
+                    })
+                }
             } else {
                 return
             }
@@ -65,7 +71,7 @@ public extension UIImageView {
         
         return UIImage.loadImage(url) { (image) in
             if(initialLoadedUrl == self.loadedUrl) {
-                self.alreadyLoadedOriginaImage = true
+                self.alreadyLoadedOriginalImage = true
                 self.image = image
                 if(animated) {
                     self.alpha = 0.2

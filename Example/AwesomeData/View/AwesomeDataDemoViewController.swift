@@ -42,7 +42,7 @@ extension AwesomeDataDemoViewController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        _ = cell.setImage(unsplashImages[(indexPath as NSIndexPath).row].imageUrl(CGSize(width: cellSize, height: cellSize)), thumbnailUrl: unsplashImages[(indexPath as NSIndexPath).row].imageUrl(CGSize(width: cellSize/4, height: cellSize/4)), imageViewName: "pictureImageView", animated: true, completion: { (image) in
+        _ = cell.setImage(unsplashImages[(indexPath as NSIndexPath).row].imageUrl(CGSize(width: cellSize, height: cellSize)), thumbnailUrl: unsplashImages[(indexPath as NSIndexPath).row].imageUrl(CGSize(width: cellSize/4, height: cellSize/4)), placeholder: UIImage(named:"placeholder"), imageViewName: "pictureImageView", animated: true, completion: { (image) in
             
         })
     }
