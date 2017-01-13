@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //TODO: To configure which should be the standard CoreData file, simply call
         AwesomeData.setDatabase("AwesomeDataDemo")
+        //AwesomeData.setDatabase("AwesomeDataDemo", groupName: "group.com.iOSWizards.test")
         AwesomeData.showLogs = true
         
         //Configure cache

@@ -18,6 +18,7 @@ open class AwesomeDataAccess: NSObject {
     static open var sharedInstance = AwesomeDataAccess()
     
     var databaseName: String!
+    var groupName: String?
     var databaseNameSqlite: String!
     var databaseOptions: [String: Any] = [NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption: true]
     
@@ -27,19 +28,28 @@ open class AwesomeDataAccess: NSObject {
     
     init(databaseName: String) {
         super.init()
-        setDatabase(databaseName)
+        setDatabase(databaseName, groupName: nil)
     }
     
-    open func setDatabase(_ name: String){
+    open func setDatabase(_ name: String, groupName: String?){
         databaseName = name
         databaseNameSqlite = "\(databaseName).sqlite"
+        self.groupName = groupName
     }
     
     // MARK: - Local Core Data stack
     
     open lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.appendingPathComponent("SingleViewCoreData.sqlite")
+        
+        var url = self.applicationDocumentsDirectory.appendingPathComponent(self.databaseNameSqlite)
+        
+        //configure group database
+        if let groupName = self.groupName {
+            let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupName)!
+            url = directory.appendingPathComponent(self.databaseNameSqlite)
+        }
+        
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: self.databaseOptions)
