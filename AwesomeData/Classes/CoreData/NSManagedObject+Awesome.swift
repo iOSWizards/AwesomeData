@@ -18,7 +18,9 @@ extension NSManagedObject {
      */
     public static func save(withContext managedContext: NSManagedObjectContext = AwesomeDataAccess.sharedInstance.managedObjectContext){
         do {
-            try managedContext.save()
+            if managedContext.hasChanges {
+                try managedContext.save()
+            }
         } catch {
             let nserror = error as NSError
             NSLog("Could not save \(nserror), \(nserror.userInfo)")
