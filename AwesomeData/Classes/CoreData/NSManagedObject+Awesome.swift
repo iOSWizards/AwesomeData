@@ -54,6 +54,14 @@ extension NSManagedObject {
         for object in list {
             object.deleteInstance()
         }
+        do {
+            let managedContext = AwesomeDataAccess.sharedInstance.managedObjectContext
+            try managedContext.save()
+        } catch {
+            let nserror = error as NSError
+            NSLog("Could not delete \(nserror), \(nserror.userInfo)")
+            abort()
+        }
     }
     
     /*
