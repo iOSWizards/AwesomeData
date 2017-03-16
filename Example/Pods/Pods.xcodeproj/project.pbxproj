@@ -27,6 +27,13 @@
 		9A4DB5C9741D4F81781C47DA02B1D951 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265C92513381F8C0936D0DBDE37BC11C /* Foundation.framework */; };
 		9CB86284C003D50488E724DF927B51FF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B0931E22F1F20CC87CC8361F96E24 /* SystemConfiguration.framework */; };
 		A2B6FF1139834C7E8F95A274BB1EB9B1 /* AwesomeData-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BEB538568AECDAC775F190D2DED971C /* AwesomeData-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A730982B1E7AE1CC00156B80 /* AwesomeData-watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = A73098291E7AE1CC00156B80 /* AwesomeData-watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A730982F1E7AE24900156B80 /* AwesomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE76257DAF633E9FD982140C188CB5C2 /* AwesomeData.swift */; };
+		A73098301E7AE24900156B80 /* AwesomeCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDFE64C6896FF9F4B8F27B0BA00A22 /* AwesomeCacheManager.swift */; };
+		A73098311E7AE24900156B80 /* AwesomeDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C903E47A19788EA58655BC2B4E2B8C /* AwesomeDataAccess.swift */; };
+		A73098321E7AE24900156B80 /* NSManagedObject+Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = B640CEDBED09A4AC2EE332FC9382DDFC /* NSManagedObject+Awesome.swift */; };
+		A73098331E7AE24900156B80 /* AwesomeRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40844BC846AAC461F2275FDE8C0EDB /* AwesomeRequester.swift */; };
+		A73098341E7AE24900156B80 /* AwesomeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1362ADF1917356CD03AB7963AE1F6988 /* AwesomeParser.swift */; };
 		AF66F26A1DC4F9448A8A358AEA89B8E4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D4187F1B8F1EEEA7A0121DE67F2B7 /* Reachability.swift */; };
 		B275AA4E49790ADE722F07887E1CD507 /* Pods-AwesomeData_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 43363382F9BE5F54F44C51C2F3E4C3E3 /* Pods-AwesomeData_Example-dummy.m */; };
 		B5C1AC37E80204A6C9405D86A69B88C0 /* ReachabilitySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F84B6130651A2D33B43E2262595D590 /* ReachabilitySwift.framework */; };
@@ -101,6 +108,9 @@
 		9504114B1BA8378967E74773B9D63834 /* Pods-AwesomeData_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AwesomeData_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		9BEB538568AECDAC775F190D2DED971C /* AwesomeData-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AwesomeData-umbrella.h"; sourceTree = "<group>"; };
 		A081F44F9C29FC4C697E61E7D3C30E07 /* Pods-AwesomeData_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AwesomeData_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A73098271E7AE1CC00156B80 /* AwesomeData-watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "AwesomeData-watchOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A73098291E7AE1CC00156B80 /* AwesomeData-watchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AwesomeData-watchOS.h"; sourceTree = "<group>"; };
+		A730982A1E7AE1CC00156B80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3CA4D31EB2A1898619D7FEC81914565 /* Pods-AwesomeData_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AwesomeData_Example.modulemap"; sourceTree = "<group>"; };
 		B640CEDBED09A4AC2EE332FC9382DDFC /* NSManagedObject+Awesome.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Awesome.swift"; sourceTree = "<group>"; };
 		B69D4187F1B8F1EEEA7A0121DE67F2B7 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Reachability/Reachability.swift; sourceTree = "<group>"; };
@@ -125,6 +135,13 @@
 			files = (
 				C145727EBC7145962E95DBBBDE1E6570 /* Foundation.framework in Frameworks */,
 				9CB86284C003D50488E724DF927B51FF /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73098231E7AE1CC00156B80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +291,7 @@
 				528BD674C3CF48ED49B951B6973636FC /* Pods_AwesomeData_Example.framework */,
 				C99D2C1B67EE022D4DB50D231E5E5495 /* Pods_AwesomeData_Tests.framework */,
 				665D0D3E313342496B8A12DD59E4AD3E /* ReachabilitySwift.framework */,
+				A73098271E7AE1CC00156B80 /* AwesomeData-watchOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -310,6 +328,7 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				A383E2E7C44CD79CE39874AD66FCDBB5 /* Development Pods */,
+				A73098281E7AE1CC00156B80 /* AwesomeData-watchOS */,
 				23D957A18E39051E3C576E7521B8012B /* Frameworks */,
 				9BCD5CBAACE7E3EBED55F693896BB924 /* Pods */,
 				5B666A85B7FD5FA9DE758D10A658D57B /* Products */,
@@ -340,6 +359,15 @@
 				2675F0432C07840B2F581554491826B5 /* AwesomeData */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		A73098281E7AE1CC00156B80 /* AwesomeData-watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				A73098291E7AE1CC00156B80 /* AwesomeData-watchOS.h */,
+				A730982A1E7AE1CC00156B80 /* Info.plist */,
+			);
+			path = "AwesomeData-watchOS";
 			sourceTree = "<group>";
 		};
 		A9ED4EC8142E9CD679F2F17116535C39 /* Support Files */ = {
@@ -424,6 +452,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A73098241E7AE1CC00156B80 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A730982B1E7AE1CC00156B80 /* AwesomeData-watchOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -498,6 +534,24 @@
 			productReference = 528BD674C3CF48ED49B951B6973636FC /* Pods_AwesomeData_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		A73098261E7AE1CC00156B80 /* AwesomeData-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A730982E1E7AE1CC00156B80 /* Build configuration list for PBXNativeTarget "AwesomeData-watchOS" */;
+			buildPhases = (
+				A73098221E7AE1CC00156B80 /* Sources */,
+				A73098231E7AE1CC00156B80 /* Frameworks */,
+				A73098241E7AE1CC00156B80 /* Headers */,
+				A73098251E7AE1CC00156B80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AwesomeData-watchOS";
+			productName = "AwesomeData-watchOS";
+			productReference = A73098271E7AE1CC00156B80 /* AwesomeData-watchOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -506,6 +560,12 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					A73098261E7AE1CC00156B80 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -523,9 +583,20 @@
 				90FCE4626B661BFD9785E69DC639B5C8 /* Pods-AwesomeData_Example */,
 				3BDDEFDE3C8B4131BEFDD3027A6FA0CA /* Pods-AwesomeData_Tests */,
 				3EBABB9F9A4D63C2275A375AE10F2C67 /* ReachabilitySwift */,
+				A73098261E7AE1CC00156B80 /* AwesomeData-watchOS */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A73098251E7AE1CC00156B80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		29F7839E47BDBC1A964A7171B72218FE /* Sources */ = {
@@ -571,6 +642,19 @@
 			files = (
 				AF66F26A1DC4F9448A8A358AEA89B8E4 /* Reachability.swift in Sources */,
 				181E2B79A58D4C318DD09736AB4ABE5C /* ReachabilitySwift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73098221E7AE1CC00156B80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A730982F1E7AE24900156B80 /* AwesomeData.swift in Sources */,
+				A73098301E7AE24900156B80 /* AwesomeCacheManager.swift in Sources */,
+				A73098311E7AE24900156B80 /* AwesomeDataAccess.swift in Sources */,
+				A73098321E7AE24900156B80 /* NSManagedObject+Awesome.swift in Sources */,
+				A73098331E7AE24900156B80 /* AwesomeRequester.swift in Sources */,
+				A73098341E7AE24900156B80 /* AwesomeParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,6 +878,86 @@
 			};
 			name = Debug;
 		};
+		A730982C1E7AE1CC00156B80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "AwesomeData-watchOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LeonardoFerreira.AwesomeData-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		A730982D1E7AE1CC00156B80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "AwesomeData-watchOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LeonardoFerreira.AwesomeData-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
 		C36CDE924CF90691F2D5ACED2F280BD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E2D2A444FC528FC0D4C80F57A3D32F88 /* ReachabilitySwift.xcconfig */;
@@ -971,6 +1135,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A730982E1E7AE1CC00156B80 /* Build configuration list for PBXNativeTarget "AwesomeData-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A730982C1E7AE1CC00156B80 /* Debug */,
+				A730982D1E7AE1CC00156B80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		E499E1E91686CC8F3B213C5A6BA1AB5F /* Build configuration list for PBXNativeTarget "Pods-AwesomeData_Tests" */ = {
 			isa = XCConfigurationList;
