@@ -176,8 +176,30 @@ extension AwesomeRequester {
      *   @param completion: Returns fetched NSData in a block
      */
     public static func performRequest(_ urlString: String?, method: URLMethod? = .GET, jsonBody: [String: AnyObject]? = nil, authorization: String, timeoutAfter timeout: TimeInterval = 0, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask? {
+        return performRequest(
+            urlString,
+            method: method,
+            jsonBody: jsonBody,
+            headers: ["Authorization": authorization],
+            timeoutAfter: timeout,
+            completion: completion
+        )
+    }
+    
+    /*
+     *   Fetch data from URL with NSUrlSession
+     *   @param urlString: Url to fetch data form
+     *   @param method: URL method to fetch data using URLMethod enum
+     *   @param jsonBody: adds json (Dictionary) body to request
+     *   @param headers: adds headers to the request
+     *   @param timeout: adds the request timeout
+     *   @param completion: Returns fetched NSData in a block
+     */
+    public static func performRequest(_ urlString: String?, method: URLMethod? = .GET, jsonBody: [String: AnyObject]? = nil, headers: [String: String], timeoutAfter timeout: TimeInterval = 0, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask? {
+        
         var data: Data?
         var headerValues = [[String]]()
+        
         if let jsonBody = jsonBody {
             do {
                 try data = JSONSerialization.data(withJSONObject: jsonBody, options: .prettyPrinted)
@@ -188,9 +210,19 @@ extension AwesomeRequester {
             }
         }
         
-        headerValues.append([authorization, "Authorization"])
+        for (key, value) in headers {
+            headerValues.append([value, key])
+        }
         
-        return performRequest(urlString, method: method, bodyData: data, headerValues: headerValues, shouldCache: false, timeoutAfter: timeout, completion: completion)
+        return performRequest(
+            urlString,
+            method: method,
+            bodyData: data,
+            headerValues: headerValues,
+            shouldCache: false,
+            timeoutAfter: timeout,
+            completion: completion
+        )
     }
     
 }

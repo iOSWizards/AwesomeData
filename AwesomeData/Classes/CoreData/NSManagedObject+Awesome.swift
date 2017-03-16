@@ -46,6 +46,25 @@ extension NSManagedObject {
     }
     
     /*
+     *  Deletes all instances of current NSManagedObject Class
+     *  @param managedContext: context for wanted database | as default, will get the standard Coredata shared instance for the App
+     */
+    public static func deleteAllInstances() {
+        let list = self.list()
+        for object in list {
+            object.deleteInstance()
+        }
+        do {
+            let managedContext = AwesomeDataAccess.sharedInstance.managedObjectContext
+            try managedContext.save()
+        } catch {
+            let nserror = error as NSError
+            NSLog("Could not delete \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+    }
+    
+    /*
      *  Lists all instances of the current NSManagedObject with sortDescriptor
      *  @param managedContext: context for wanted database | as default, will get the standard Coredata shared instance for the App
      *  @param sortDescriptor: NSSortDescriptor with sort params
