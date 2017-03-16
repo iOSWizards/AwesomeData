@@ -41,5 +41,5 @@ Fetch data from URLs, parse JSON and save to Coredata easily.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 
-    s.dependency 'ReachabilitySwift', '~> 3'
+    # s.dependency 'ReachabilitySwift', '~> 3'
 end
