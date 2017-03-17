@@ -31,6 +31,16 @@ it, simply add the following line to your Podfile:
 pod "AwesomeData", git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.4.8'
 ```
 
+To use it on Apple Watch too, simply add the following lines to your Podfile:
+
+```ruby
+target 'YourAppleWatch Extension' do
+    platform :watchos, '2.0'
+    pod 'AwesomeData', git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.4.8'
+    
+end
+```
+
 ## Author
 
 Evandro Hoffmann, evandro@itsdayoff.com
