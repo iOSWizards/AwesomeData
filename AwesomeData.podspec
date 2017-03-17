@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AwesomeData'
-  s.version          = '0.4.1'
+  s.version          = '0.4.8'
   s.summary          = 'Handling Coredata has been made easy.'
 
 # This description is used to generate tags and improve search results.
@@ -29,8 +29,10 @@ Fetch data from URLs, parse JSON and save to Coredata easily.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.watchos.deployment_target = '2.0'
 
-  s.source_files = 'AwesomeData/Classes/**/*.{swift}'
+  s.ios.source_files = 'AwesomeData/Classes/**/*.{swift}'
+  s.watchos.source_files = 'AwesomeData/Classes/AwesomeData.swift', 'AwesomeData/Classes/Cache/*.swift', 'AwesomeData/Classes/CoreData/*.swift', 'AwesomeData/Classes/Fetcher/*.swift', 'AwesomeData/Classes/Parser/*.swift'
 
   # s.resource_bundles = {
   #   'AwesomeData' => ['AwesomeData/Assets/*.png']
@@ -40,5 +42,5 @@ Fetch data from URLs, parse JSON and save to Coredata easily.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 
-    s.dependency 'ReachabilitySwift', '~> 3'
+    # s.dependency 'ReachabilitySwift', '~> 3'
 end
