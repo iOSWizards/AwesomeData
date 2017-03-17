@@ -1,5 +1,8 @@
 # AwesomeData
 
+#### Fetches data, parse JSON and organise CoreData easily. Supported on iOS and watchOS. :iphone: :watch:
+
+
 <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat" alt="Swift" /></a>
 <a href="https://tldrlegal.com/license/mit-license"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat" alt="License" /></a>
 [![Version](https://img.shields.io/cocoapods/v/AwesomeData.svg?style=flat)](http://cocoapods.org/pods/AwesomeData)
