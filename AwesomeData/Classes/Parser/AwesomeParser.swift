@@ -10,6 +10,13 @@ import UIKit
 
 open class AwesomeParser: NSObject {
 
+    /**
+     It parses the Data object on **the main thread and you must wait** the result.
+     
+     ## Important Notes ##
+     * If something goes wrong you receive **nil** as result.
+     
+     */
     open static func jsonObject(_ data: Data?) -> AnyObject?{
         if let data = data {
             do {
@@ -21,6 +28,37 @@ open class AwesomeParser: NSObject {
         }
         
         return nil
+    }
+    
+    /**
+     It parses the Data object on a worker thread and bounces the result back to the main thread.
+     
+     ## Important Notes ##
+     * If something goes wrong **nil** is returned on the success block.
+     
+     */
+    open static func jsonObjectAsync(_ data: Data?, success: @escaping (_ jsonObject: AnyObject?) -> Void) {
+        if let data = data {
+            DispatchQueue.global(qos: .default).async {
+                
+                do {
+                    
+                    let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject?
+                    
+                    // Bounce back to the main thread to update the UI
+                    DispatchQueue.main.async {
+                        success(json)
+                    }
+                    
+                } catch {
+                    print("error serializing JSON: \(error)")
+                    DispatchQueue.main.async {
+                        success(nil)
+                    }
+                }
+            }
+        }
+        
     }
     
     open static func doubleValue(_ jsonObject: [String: Any], key: String) -> Double{
