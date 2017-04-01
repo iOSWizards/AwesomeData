@@ -33,7 +33,7 @@ open class AwesomeDataAccess: NSObject {
     
     open func setDatabase(_ name: String, groupName: String?){
         databaseName = name
-        databaseNameSqlite = "\(databaseName).sqlite"
+        databaseNameSqlite = "\(databaseName ?? "").sqlite"
         self.groupName = groupName
     }
     
