@@ -28,6 +28,29 @@ extension NSManagedObject {
         }
     }
     
+    /**
+     It saves the managedContext asynchronisly.
+     
+     ## Important Notes ##
+     * If something goes wrong **false** is returned on the saved block.
+     
+     */
+    public static func saveAsync(withContext managedContext: NSManagedObjectContext = AwesomeDataAccess.sharedInstance.managedObjectContext, saved: @escaping (Bool) -> Void) {
+        managedContext.perform({
+            do {
+                if managedContext.hasChanges {
+                    try managedContext.save()
+                    saved(true)
+                }
+            } catch {
+                let nserror = error as NSError
+                NSLog("Could not save \(nserror), \(nserror.userInfo)")
+                abort()
+                saved(false)
+            }
+        })
+    }
+    
     /*
      *  Creates a new instance of the current NSManagedObject
      *  @param managedContext: as default, will get the standard Coredata shared instance for the App
@@ -53,6 +76,14 @@ extension NSManagedObject {
         let list = self.list()
         for object in list {
             object.deleteInstance()
+        }
+        do {
+            let managedContext = AwesomeDataAccess.sharedInstance.managedObjectContext
+            try managedContext.save()
+        } catch {
+            let nserror = error as NSError
+            NSLog("Could not delete \(nserror), \(nserror.userInfo)")
+            abort()
         }
     }
     
@@ -85,6 +116,51 @@ extension NSManagedObject {
         }
         
         return fetchedResults
+    }
+    
+    /**
+     It lists the domain associated with the managedContext asynchronisly.
+     
+     - Parameter withContext: the ***NSManagedObjectContext***, if not provided the default one is used.
+     - Parameter sortDescriptor: the ***NSSortDescriptor***, if not provided no sort is guaranteed.
+     - Parameter predicate: the ***NSPredicate***, if not provided all records of this domain are listed.
+     - Parameter successFetch: the response block to retrieve the objects listed.
+     
+     */
+    public static func listAsync(
+        withContext managedContext: NSManagedObjectContext = AwesomeDataAccess.sharedInstance.managedObjectContext,
+        sortDescriptor: NSSortDescriptor? = nil,
+        predicate: NSPredicate? = nil,
+        successFetch: @escaping ([NSManagedObject]?) -> Void) {
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: self))
+        
+        if let sortDescriptor = sortDescriptor {
+            fetchRequest.sortDescriptors = [sortDescriptor]
+        }
+        
+        if let predicate = predicate {
+            fetchRequest.predicate = predicate
+        }
+        
+        // Initialize Asynchronous Fetch Request
+        let asynchronousFetchRequest = NSAsynchronousFetchRequest.init(fetchRequest: fetchRequest, completionBlock: { (asyncFetchResult) in
+            DispatchQueue.main.async {
+                if let result = asyncFetchResult.finalResult {
+                    successFetch(result as! [NSManagedObject])
+                } else {
+                    successFetch(nil)
+                }
+            }
+        })
+        
+        do {
+            try managedContext.execute(asynchronousFetchRequest)
+        } catch {
+            let nserror = error as NSError
+            print("Could not fetch \(nserror), \(nserror.userInfo)")
+        }
+        
     }
     
     /*
