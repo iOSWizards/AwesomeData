@@ -34,6 +34,7 @@ Fetch data from URLs, parse JSON and save to Coredata easily.
 
   s.ios.source_files = 'AwesomeData/Classes/**/*.{swift}'
   s.watchos.source_files = 'AwesomeData/Classes/AwesomeData.swift', 'AwesomeData/Classes/Cache/*.swift', 'AwesomeData/Classes/CoreData/*.swift', 'AwesomeData/Classes/Fetcher/*.swift', 'AwesomeData/Classes/Parser/*.swift'
+  s.tvos.source_files = 'AwesomeData/Classes/**/*.{swift}'
 
   # s.resource_bundles = {
   #   'AwesomeData' => ['AwesomeData/Assets/*.png']
