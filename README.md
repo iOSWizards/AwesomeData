@@ -1,6 +1,6 @@
 # AwesomeData
 
-#### Fetches data, parse JSON and organise CoreData easily. Supported on iOS and watchOS. :iphone: :watch:
+#### Fetches data, parse JSON and organise CoreData easily. Supported on iOS, watchOS and tvOS. :iphone: :watch: :tv:
 
 
 <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat" alt="Swift" /></a>
@@ -11,7 +11,7 @@
 ### Continuous integration - branch master
 [![CI Status Master](https://travis-ci.org/iOSWizards/AwesomeData.svg?branch=master)](https://travis-ci.org/iOSWizards/AwesomeData)
 ### Continuous integration - branch develop
-[![CI Status](https://travis-ci.org/iOSWizards/AwesomeData.svg?branch=0.4.8)](https://travis-ci.org/iOSWizards/AwesomeData)
+[![CI Status](https://travis-ci.org/iOSWizards/AwesomeData.svg?branch=0.5.2)](https://travis-ci.org/iOSWizards/AwesomeData)
 
 ## Example
 
@@ -28,15 +28,25 @@ AwesomeData is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "AwesomeData", git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.5.0'
+pod "AwesomeData", git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.5.2'
 ```
 
-To use it on Apple Watch too, simply add the following lines to your Podfile:
+To use it on Apple Watch, simply add the following lines to your Podfile:
 
 ```ruby
 target 'YourAppleWatch Extension' do
     platform :watchos, '2.0'
-    pod 'AwesomeData', git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.4.9'
+    pod 'AwesomeData', git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.5.2'
+    
+end
+```
+
+To use it on Apple TV too, simply add the following lines to your Podfile:
+
+```ruby
+target 'YourAppleTVTarget' do
+    platform :tvos, '9.0'
+    pod 'AwesomeData', git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.5.2'
     
 end
 ```
