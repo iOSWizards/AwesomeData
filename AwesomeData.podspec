@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AwesomeData'
-  s.version          = '0.5.0'
+  s.version          = '0.5.1'
   s.summary          = 'Handling Coredata has been made easy.'
 
 # This description is used to generate tags and improve search results.
@@ -30,6 +30,7 @@ Fetch data from URLs, parse JSON and save to Coredata easily.
 
   s.ios.deployment_target = '8.0'
   s.watchos.deployment_target = '2.0'
+  s.tvos.deployment_target = '9.0'
 
   s.ios.source_files = 'AwesomeData/Classes/**/*.{swift}'
   s.watchos.source_files = 'AwesomeData/Classes/AwesomeData.swift', 'AwesomeData/Classes/Cache/*.swift', 'AwesomeData/Classes/CoreData/*.swift', 'AwesomeData/Classes/Fetcher/*.swift', 'AwesomeData/Classes/Parser/*.swift'
