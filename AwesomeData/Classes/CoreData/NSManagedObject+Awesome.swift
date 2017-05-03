@@ -45,8 +45,8 @@ extension NSManagedObject {
             } catch {
                 let nserror = error as NSError
                 NSLog("Could not save \(nserror), \(nserror.userInfo)")
-                abort()
                 saved(false)
+                abort()
             }
         })
     }
@@ -131,7 +131,8 @@ extension NSManagedObject {
         withContext managedContext: NSManagedObjectContext = AwesomeDataAccess.sharedInstance.managedObjectContext,
         sortDescriptor: NSSortDescriptor? = nil,
         predicate: NSPredicate? = nil,
-        successFetch: @escaping ([NSManagedObject]?) -> Void) {
+        successFetch: @escaping ([NSManagedObject]) -> Void,
+        failure:@escaping (()->Void)) {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: self))
         
@@ -146,10 +147,10 @@ extension NSManagedObject {
         // Initialize Asynchronous Fetch Request
         let asynchronousFetchRequest = NSAsynchronousFetchRequest.init(fetchRequest: fetchRequest, completionBlock: { (asyncFetchResult) in
             DispatchQueue.main.async {
-                if let result = asyncFetchResult.finalResult {
-                    successFetch(result as! [NSManagedObject])
+                if let result = asyncFetchResult.finalResult as? [NSManagedObject] {
+                    successFetch(result)
                 } else {
-                    successFetch(nil)
+                    failure()
                 }
             }
         })
@@ -159,6 +160,7 @@ extension NSManagedObject {
         } catch {
             let nserror = error as NSError
             print("Could not fetch \(nserror), \(nserror.userInfo)")
+            failure()
         }
         
     }
@@ -185,6 +187,32 @@ extension NSManagedObject {
         }
         
         return nil
+    }
+    
+    
+    public static func getAsyncObject(withContext managedContext: NSManagedObjectContext = AwesomeDataAccess.sharedInstance.managedObjectContext, predicate: NSPredicate, createIfNil: Bool = false, successFetch: @escaping (NSManagedObject?) -> Void, failure:@escaping (()->Void)) {
+        
+        listAsync(withContext: managedContext, predicate: predicate, successFetch: { (fetchedObjects) in
+            //            if let fetchedObjects = fetchedObjects as? [NSManagedObject] {
+            if fetchedObjects.count > 0{
+                if AwesomeData.showLogs { print("fetched \(fetchedObjects.count) \(String(describing: self)) with predicate \(predicate)") }
+                successFetch(fetchedObjects.first)
+                return
+            }
+            //            }
+            
+            if createIfNil {
+                if AwesomeData.showLogs { print("creating new instance of \(String(describing: self))") }
+                successFetch(newInstance(withContext: managedContext))
+                return
+            }
+            
+            successFetch(nil)
+        }) {
+            print("error fetching objects asyncronous from core data")
+            failure()
+        }
+        
     }
     
     /*
