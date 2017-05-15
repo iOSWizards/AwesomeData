@@ -20,20 +20,22 @@ open class AwesomeDataAccess: NSObject {
     var databaseName: String!
     var groupName: String?
     var databaseNameSqlite: String!
+    var useTempDirectory = false
     var databaseOptions: [String: Any] = [NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption: true]
     
     override init(){
         super.init()
     }
     
-    init(databaseName: String) {
+    init(databaseName: String, useTempDirectory: Bool = false) {
         super.init()
-        setDatabase(databaseName, groupName: nil)
+        setDatabase(databaseName, groupName: nil, useTempDirectory: useTempDirectory)
     }
     
-    open func setDatabase(_ name: String, groupName: String?){
+    open func setDatabase(_ name: String, groupName: String?, useTempDirectory: Bool = false){
         databaseName = name
         databaseNameSqlite = "\(databaseName ?? "").sqlite"
+        self.useTempDirectory = useTempDirectory
         self.groupName = groupName
     }
     
@@ -47,6 +49,11 @@ open class AwesomeDataAccess: NSObject {
         //configure group database
         if let groupName = self.groupName {
             let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupName)!
+            url = directory.appendingPathComponent(self.databaseNameSqlite)
+        }
+        
+        if self.useTempDirectory, #available(tvOS 10.0, iOSApplicationExtension 10.0, watchOS 3.0, iOS 10, *) {
+            let directory = FileManager.default.temporaryDirectory
             url = directory.appendingPathComponent(self.databaseNameSqlite)
         }
         
@@ -65,14 +72,14 @@ open class AwesomeDataAccess: NSObject {
         }
         
         return coordinator
-        }()
+    }()
     
     // MARK: - Core Data stack
     
     open lazy var applicationDocumentsDirectory: URL = {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls[urls.count-1]
-        }()
+    }()
     
     open lazy var managedObjectModel: NSManagedObjectModel = {
         if self.databaseName == nil {
@@ -82,14 +89,14 @@ open class AwesomeDataAccess: NSObject {
         
         let modelURL = Bundle.main.url(forResource: self.databaseName, withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
-        }()
+    }()
     
     open lazy var managedObjectContext: NSManagedObjectContext = {
         let coordinator = self.persistentStoreCoordinator
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
-        }()
+    }()
     
     // MARK: - Core Data Saving support
     
