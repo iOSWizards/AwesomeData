@@ -9,7 +9,7 @@
 import UIKit
 
 open class AwesomeParser: NSObject {
-
+    
     /**
      It parses the Data object on **the main thread and you must wait** the result.
      
@@ -100,9 +100,6 @@ open class AwesomeParser: NSObject {
         }else if let array = jsonObject[key] as? [String] {
             return array[0]
         }else if let object = jsonObject[key] {
-            if object == nil {
-                return ""
-            }
             return "\(object)".removeNull()
         }
         return ""
@@ -148,3 +145,4 @@ extension String {
         return self.replacingOccurrences(of: " ", with: "")
     }
 }
+

@@ -22,7 +22,7 @@ class AwesomeDataDemoViewController: UICollectionViewController {
             self.unsplashImages.append(contentsOf: unsplashImages)
             self.collectionView?.reloadData()
         }) { (message) in
-            print("Error: \(message)")
+            print("Error: \(String.init(describing: message))")
         }
     }
 }

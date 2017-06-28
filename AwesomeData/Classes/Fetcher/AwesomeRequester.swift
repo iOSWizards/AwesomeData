@@ -19,13 +19,13 @@ open class AwesomeRequester: NSObject {
     // MARK:- Where the magic happens
     
     /*
-    *   Fetch data from URL with NSUrlSession
-    *   @param urlString: Url to fetch data form
-    *   @param method: URL method to fetch data using URLMethod enum
-    *   @param headerValues: Any header values to complete the request
-    *   @param shouldCache: Cache fetched data, if on, it will check first for data in cache, then fetch if not found
-    *   @param completion: Returns fetched NSData in a block
-    */
+     *   Fetch data from URL with NSUrlSession
+     *   @param urlString: Url to fetch data form
+     *   @param method: URL method to fetch data using URLMethod enum
+     *   @param headerValues: Any header values to complete the request
+     *   @param shouldCache: Cache fetched data, if on, it will check first for data in cache, then fetch if not found
+     *   @param completion: Returns fetched NSData in a block
+     */
     open static func performRequest(_ urlString: String?, method: URLMethod? = .GET, bodyData: Data? = nil, headerValues: [[String]]? = nil, shouldCache: Bool = false, timeoutAfter timeout: TimeInterval = 0, completion:@escaping (_ data: Data?) -> Void) -> URLSessionDataTask?{
         guard let urlString = urlString else {
             completion(nil)
@@ -54,7 +54,7 @@ open class AwesomeRequester: NSObject {
         }
         
         // Continue to URL request
-
+        
         if let method = method {
             urlRequest.httpMethod = method.rawValue
         }
@@ -103,7 +103,7 @@ extension AwesomeRequester {
      *   @param completion: Returns fetched NSData in a block
      */
     public static func performRequest(_ urlString: String?, timeOut: Double, timeoutAfter timeout: TimeInterval = 0, completion:@escaping (_ data: Data?) -> Void){
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
+        DispatchQueue.global(qos: .default).async {
             var canTimeOut = true
             var timedOut = false
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(timeOut * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
@@ -113,7 +113,7 @@ extension AwesomeRequester {
                 }
             })
             
-            performRequest(urlString, timeoutAfter: timeout, completion: { (data) in
+            _ = performRequest(urlString, timeoutAfter: timeout, completion: { (data) in
                 canTimeOut = false;
                 
                 DispatchQueue.main.async(execute: {
@@ -226,4 +226,5 @@ extension AwesomeRequester {
     }
     
 }
+
 
