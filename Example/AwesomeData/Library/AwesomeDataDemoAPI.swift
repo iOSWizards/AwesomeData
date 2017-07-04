@@ -14,7 +14,7 @@ class AwesomeDataDemoAPI: NSObject {
     static let unsplashListUrl = "https://unsplash.it/list"
     
     static func fetchUnsplashImages(_ success:@escaping (_ unsplashImages: [UnsplashImage])->Void, failure:@escaping (_ message: String?)->Void){
-        _ = AwesomeRequester.performRequest(unsplashListUrl, method: .GET) { (data) in
+        _ = AwesomeRequester.performRequest(unsplashListUrl, method: .GET, completion: { (data) in
             if let jsonObject = AwesomeParser.jsonObject(data) {
                 let unsplashImages = UnsplashImage.parseJSONArray(jsonObject)
                 UnsplashImage.save()
@@ -29,7 +29,7 @@ class AwesomeDataDemoAPI: NSObject {
                     }
                 }
             }
-        }
+        })
     }
     
 }
