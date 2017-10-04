@@ -28,7 +28,7 @@ AwesomeData is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "AwesomeData", git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.5.6'
+pod "AwesomeData", git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.5.7'
 ```
 
 To use it on Apple Watch, simply add the following lines to your Podfile:
@@ -36,7 +36,7 @@ To use it on Apple Watch, simply add the following lines to your Podfile:
 ```ruby
 target 'YourAppleWatch Extension' do
     platform :watchos, '2.0'
-    pod 'AwesomeData', git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.5.5'
+    pod 'AwesomeData', git: 'https://github.com/iOSWizards/AwesomeData.git', tag: '0.5.7'
     
 end
 ```

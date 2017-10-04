@@ -12,8 +12,8 @@ extension Data {
     public var attributedString: NSAttributedString? {
         do {
             return try NSAttributedString(data: self, options:[
-                NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType,
-                NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue
+                NSAttributedString.DocumentReadingOptionKey.documentType:NSAttributedString.DocumentType.html,
+                NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue
                 ], documentAttributes: nil)
         } catch let error as NSError {
             print(error.localizedDescription)
