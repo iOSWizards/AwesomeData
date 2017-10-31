@@ -61,7 +61,7 @@ extension UIView {
                     ])
             } else if constraint.secondItem as? NSObject == self {
                 self.superview?.addConstraints([
-                    NSLayoutConstraint(item: constraint.firstItem ?? 0,
+                    NSLayoutConstraint(item: constraint.firstItem as Any,
                                        attribute: constraint.firstAttribute,
                                        relatedBy: constraint.relation,
                                        toItem: toView,
